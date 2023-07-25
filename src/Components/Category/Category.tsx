@@ -7,7 +7,7 @@ function Category() {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(fetchCategory)
+        dispatch(fetchCategory())
     }, [])
 
 
