@@ -1,8 +1,7 @@
 .header {
-
 }
 .blackLine {
-  background-color: #1E212C;
+  background-color: #1e212c;
   display: flex;
   justify-content: space-between;
   color: grey;
@@ -33,15 +32,17 @@
   display: flex;
   gap: 10px;
 }
+.subBar2 div {
+  cursor: pointer;
+}
 .whiteLine {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   font-size: 16px;
   color: black;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 100px;
-  padding: 30px 0;
+  padding: 30px 100px;
 }
 .categoriesBar {
   list-style: none;
@@ -53,6 +54,7 @@
 }
 .categoriesBar li {
   cursor: pointer;
+  white-space: nowrap;
 }
 .favoritesBar {
   display: flex;
@@ -82,19 +84,19 @@
 .cartIndic {
   margin-left: 8px;
   box-sizing: border-box;
-  background-color: #03CEA4;
+  background-color: #03cea4;
   border-radius: 6px;
   padding: 3px 10px;
   color: white;
 }
 .favoritesIndic {
-
   margin-left: 8px;
 }
 .logo {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: black;
   font-size: 28px;
+  white-space: nowrap;
 }
 .link {
   color: grey;
