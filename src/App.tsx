@@ -1,24 +1,24 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Navigate, Route, Routes } from "react-router-dom";
+
+import Header from "./Components/Header";
+import Home from "./Components/pages/Home";
 import SignUp from "./Components/SignUp";
 import SignIn from "./Components/SignIn";
-import { useSelector } from "react-redux";
+
+import "./App.css"
+
 import { RootState } from "./app/store";
-
-import Category from "./Components/Category/Category";
-
-import Home from "./Components/pages/Home";
-
 
 function App() {
   const token = useSelector((state: RootState) => state.application.token);
   return (
     <div>
+      <Header />
       <Routes>
         {token ? (
           <>
-
-            
             <Route path="/sign-up" element={<Navigate to="/" />} />
             <Route path="/sign-in" element={<Navigate to="/" />} />
             <Route path="/" element={<Home />} />
@@ -27,8 +27,6 @@ function App() {
           <>
             <Route path="/sign-up" element={<SignUp />} />
             <Route path="/sign-in" element={<SignIn />} />
-
-          
 
             <Route path="/" element={<Home />} />
           </>
