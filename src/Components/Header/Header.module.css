@@ -1,0 +1,151 @@
+.header {
+
+}
+.blackLine {
+  background-color: #1E212C;
+  display: flex;
+  justify-content: space-between;
+  color: grey;
+  padding: 12px 100px;
+}
+.navBar {
+  display: flex;
+  gap: 32px;
+}
+.profileBar {
+  display: flex;
+  gap: 20px;
+}
+.bar1 {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.bar2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.bar2 img {
+  color: grey;
+}
+.subBar2 {
+  display: flex;
+  gap: 10px;
+}
+.whiteLine {
+  background-color: #FFFFFF;
+  font-size: 16px;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 100px;
+  padding: 30px 0;
+}
+.categoriesBar {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+}
+.categoriesBar li {
+  cursor: pointer;
+}
+.favoritesBar {
+  display: flex;
+  align-items: center;
+  width: 30px;
+  height: 25px;
+  text-decoration: none;
+}
+.favoritesBar img {
+  height: 20px;
+}
+.cartBar {
+  display: flex;
+  align-items: center;
+  width: 40px;
+  height: 25px;
+  text-decoration: none;
+}
+.cartBar img {
+  height: 20px;
+}
+.iconsBar {
+  display: flex;
+  gap: 40px;
+  margin-right: 18px;
+}
+.cartIndic {
+  margin-left: 8px;
+  box-sizing: border-box;
+  background-color: #03CEA4;
+  border-radius: 6px;
+  padding: 3px 10px;
+  color: white;
+}
+.favoritesIndic {
+
+  margin-left: 8px;
+}
+.logo {
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+  font-size: 28px;
+}
+.link {
+  color: grey;
+  text-decoration: none;
+}
+.link:hover {
+  border-bottom: 2px solid grey;
+}
+#slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: grey; */
+}
+#slider img {
+  width: 16px;
+}
+/* WHITE BUTTON */
+.themeButton,
+.headerDark .themeButton {
+  background-color: black;
+  border: none;
+  width: 50px;
+  height: 25px;
+  border-radius: 20px;
+  padding: 0 3px;
+}
+.themeButton div,
+.headerDark .themeButton div {
+  transition: all 0.3s ease;
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+/* DARK BUTTON */
+.themeButtonDark,
+.headerDark .themeButtonDark {
+  background-color: white;
+  border: none;
+  width: 50px;
+  height: 25px;
+  border-radius: 20px;
+  padding: 0 3px;
+}
+.themeButtonDark div,
+.headerDark .themeButtonDark div {
+  transition: all 0.3s ease;
+  margin-left: 24px;
+  background-color: black;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
