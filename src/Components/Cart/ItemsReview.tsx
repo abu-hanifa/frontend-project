@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Complete = () => {
+const ItemsReview = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const Complete = () => {
   )
 }
 
-export default Complete
+export default ItemsReview

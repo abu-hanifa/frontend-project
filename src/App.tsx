@@ -7,9 +7,10 @@ import Home from "./Components/pages/Home";
 import SignUp from "./Components/SignUp";
 import SignIn from "./Components/SignIn";
 
-import "./App.css"
+import "./App.css";
 
 import { RootState } from "./app/store";
+import Cart from "./Components/Cart";
 
 function App() {
   const token = useSelector((state: RootState) => state.application.token);
@@ -22,6 +23,7 @@ function App() {
             <Route path="/sign-up" element={<Navigate to="/" />} />
             <Route path="/sign-in" element={<Navigate to="/" />} />
             <Route path="/" element={<Home />} />
+            <Route path="/cart" element={<Cart />} />
           </>
         ) : (
           <>

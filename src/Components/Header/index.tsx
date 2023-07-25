@@ -55,7 +55,7 @@ export default function Header() {
       </div>
 
       <div className={styles.whiteLine}>
-        <span className={styles.logo}>B O O M Z I</span>
+        <Link to="/"><span className={styles.logo}>B O O M Z I</span></Link>
         <ul className={styles.categoriesBar}>
           <li onClick={handleMan}>Для мужчин</li>
           <li onClick={handleWomen}>Для женщин</li>
