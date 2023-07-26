@@ -163,3 +163,10 @@ color: rgb(128, 128, 128);
   height: 20px;
   border-radius: 50%;
 }
+.inp {
+  width: 380px;
+  height: 44px;
+  border-radius: 4px;
+  color: gray;
+  border: 1px solid grey;
+}
