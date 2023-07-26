@@ -1,0 +1,13 @@
+.Wrapper{
+    position: relative;
+}
+.categoryPopUp {
+  position: absolute;
+  overflow: scroll;
+  width: 200px;
+  height: 200px;
+  background-color: white;
+}
+.addButton{
+    margin-left: 500px;
+}
