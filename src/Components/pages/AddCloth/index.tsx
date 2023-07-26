@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../../app/store";
 import { fetchCategory } from "../../../features/categorySlice";
 import styles from "./AddCloth.module.css";
+import { createCloth } from "../../../features/clothSlice";
 
 const AddCloth = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -10,8 +11,8 @@ const AddCloth = () => {
 
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [price, setPrice] = useState<number>();
-  const [category, setCategory] = useState("");
+  const [price, setPrice] = useState<number>(0);
+  const [category, setCategory] = useState("64bfbe786399ae3ace9dc57d");
   const [size, setSize] = useState([
     { size: "XS", inStock: 100 },
     { size: "S", inStock: 100 },
@@ -20,12 +21,21 @@ const AddCloth = () => {
     { size: "XL", inStock: 100 },
   ]);
   const [image, setImage] = useState("");
-  const [popUp, setPopUp] = useState(true);
+  const [popUp, setPopUp] = useState(false);
+
+  const categoryName = categories.find((item) => item._id === category);
 
   useEffect(() => {
     dispatch(fetchCategory());
   }, []);
 
+  const categoryPopUp = (id) => {
+    setCategory(id);
+    setPopUp(false);
+  };
+  const handleAddCloth = () => {
+    dispatch(createCloth({ name, description, price, category, size, image }));
+  };
   return (
     <div className={styles.Wrapper}>
       <label>
@@ -49,11 +59,22 @@ const AddCloth = () => {
       {popUp ? (
         <div className={styles.categoryPopUp}>
           {categories.map((item) => (
-            <div onClick={() => setCategory(item._id)}>{item.name}</div>
+            <div key={item._id} onClick={() => categoryPopUp(item._id)}>
+              {item.name}
+            </div>
           ))}
         </div>
       ) : (
-        ""
+        <div>
+          {categories[0] ? (
+            <div onClick={() => setPopUp(true)}>
+              Выбрать категорию:
+              {categoryName.name && categoryName.name}
+            </div>
+          ) : (
+            "Loading"
+          )}
+        </div>
       )}
       <div>
         <input
@@ -64,6 +85,9 @@ const AddCloth = () => {
           multiple
         />
       </div>
+      <button className={styles.addButton} onClick={handleAddCloth}>
+        Добавить одежду
+      </button>
     </div>
   );
 };

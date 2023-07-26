@@ -5,8 +5,8 @@ const initialState = {
   cloths: [],
 };
 
-export const createProduct = createAsyncThunk<ReturnType<any>, createImg>(
-  "products/create",
+export const createCloth = createAsyncThunk<ReturnType<any>, createImg>(
+  "cloth/create",
   async ({ name, description, price, category, image }, thunkAPI) => {
     try {
       const formData = new FormData();
@@ -20,7 +20,7 @@ export const createProduct = createAsyncThunk<ReturnType<any>, createImg>(
       formData.append("price", price);
       formData.append("category", category);
 
-      const res = await fetch("http://localhost:4000/products", {
+      const res = await fetch("http://localhost:4000/cloth", {
         method: "POST",
         body: formData,
         headers: {
@@ -35,3 +35,16 @@ export const createProduct = createAsyncThunk<ReturnType<any>, createImg>(
     }
   }
 );
+
+const clothsSlice = createSlice({
+  name: "cloths",
+  initialState,
+  reducers: {},
+  extraReducers: (builder) => {
+    builder.addCase(createCloth.fulfilled, (state, action) => {
+      state.cloths.push(action.payload);
+    });
+  },
+});
+
+export default clothsSlice.reducer;
