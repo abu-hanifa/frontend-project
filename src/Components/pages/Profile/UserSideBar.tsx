@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from './Profile.module.css'
-import profileIcon from '../../assets/SvgIcons/profile.svg'
-import myOrderBag from '../../assets/SvgIcons/bag.svg'
-import heart from '../../assets/SvgIcons/heart.svg'
-import eye from '../../assets/SvgIcons/Eye.svg'
-import star from '../../assets/SvgIcons/star.svg'
-import logout from '../../assets/SvgIcons/logout.svg'
+import profileIcon from '../../../assets/SvgIcons/profile.svg'
+import myOrderBag from '../../../assets/SvgIcons/bag.svg'
+import heart from '../../../assets/SvgIcons/heart.svg'
+import eye from '../../../assets/SvgIcons/Eye.svg'
+import star from '../../../assets/SvgIcons/star.svg'
+import logout from '../../../assets/SvgIcons/logout.svg'
 
 const UserSideBar = () => {
   return (
