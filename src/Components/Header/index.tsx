@@ -79,8 +79,9 @@ const loading = useSelector((state) => state.category.loading)
           <span className={styles.logo}>B O O M Z I</span>
         </Link>
         <ul className={styles.categoriesBar}>
-          <button disabled={loading} onClick={handleMan}>  Для мужчин</button>
-          <button disabled={loading} onClick={handleWomen}>Для женщин</button>
+          <button disabled={loading} onClick={handleMan}>  Категории</button>
+          <input className={styles.inp} type="text" placeholder="Search for products..."/>
+          {/* <button disabled={loading} onClick={handleWomen}>Для женщин</button> */}
         </ul>
         <div className={styles.iconsBar}>
           <Link to="/favorites" className={styles.favoritesBar}>
