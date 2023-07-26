@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { AppDispatch } from "../../app/store";
-import { authSignUp } from "../../features/applicationSlice";
+import { AppDispatch } from "../../../app/store";
+import { authSignUp } from "../../../features/applicationSlice";
 
 const SignUp = () => {
   const dispatch = useDispatch<AppDispatch>();
