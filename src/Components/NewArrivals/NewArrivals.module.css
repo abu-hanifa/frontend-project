@@ -1,26 +1,51 @@
-.ThreeBlock{
-    display: flex;
-    justify-content: center;
+.Wrapper {
+  position: relative;
 }
-.ThreeBlock img{
-    width: 300px;
-    border-radius: 4px;
-    padding: 0 15px;
+.ThreeBlock {
+  display: flex;
+  position: absolute;
+  top: -50px;
+  left: 25%;
+}
+.ThreeBlock img {
+  width: 250px;
+  border-radius: 4px;
+  padding: 0 15px;
+}
+.main {
+  text-align: center;
+  padding: 300px 0 100px 0;
+}
+.main span {
+  display: block;
+}
+.slider {
+  margin-top: 10px;
+  padding: 0 15px;
+}
+.textGray {
+  font-size: 13px;
+  color: gray;
+}
+.headerText {
+  font-size: 28px;
+  font-weight: 600;
+  margin-top: 30px;
+  margin-bottom: 15px;
 }
 
-.slider{
-    text-align: center;
+.popularCat {
+  text-align: center;
 }
-.slider span{
-    display: block;
+
+.popularCat img {
+  width: 100px;
 }
-.textGray{
-    font-size: 13px;
-    color: gray;
+.category {
+  display: flex;
+  justify-content: center;
 }
-.headerText{
-    font-size: 28px;
-    font-weight: 600;
-    margin-top: 30px;
-    margin-bottom: 15px;
+
+.category div {
+  padding: 10px;
 }

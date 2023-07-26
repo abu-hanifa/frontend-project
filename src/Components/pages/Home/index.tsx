@@ -1,11 +1,11 @@
 import React from 'react'
-import Category from '../../Category/Category'
 import NewArrivals from '../../NewArrivals'
+import NewCollection from '../../NewCollection'
 
 const Home = () => {
   return (
     <div>
-      {/* <Category/> */}
+      <NewCollection/>
       <NewArrivals/>
     </div>
   )
