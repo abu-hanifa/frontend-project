@@ -15,23 +15,6 @@ export default function Header() {
   const [favoritesIndic, setFavoritesIndic] = useState(2);
   const [cartIndic, setCartIndic] = useState(4);
   const [theme, setTheme] = useState(true);
-<<<<<<< HEAD
-const [popUp, setPopUp] = useState(false)
-const loading = useSelector((state) => state.category.loading)
-
-
-
-  function handleMan() {
-    
-    setPopUp(!popUp)
-    
-   
-   
-    setPopUp(!popUp);
-    setPopUp1(false);
-  }
- 
-=======
   const [popUp, setPopUp] = useState(false);
   const [popUp1, setPopUp1] = useState(false);
   const loading = useSelector((state) => state.category.loading);
@@ -44,7 +27,6 @@ const loading = useSelector((state) => state.category.loading)
     setPopUp1(!popUp1);
     setPopUp(false);
   }
->>>>>>> 9d0a39f8735267a310aca23d99be4b0e5d7c2f8d
   function handleTheme() {
     setTheme(!theme);
   }
