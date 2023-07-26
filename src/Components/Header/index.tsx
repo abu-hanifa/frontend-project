@@ -7,22 +7,36 @@ import sun from "../../assets/image/sun4.png";
 import moon from "../../assets/image/moon4.png";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Category from "../Category/Category";
+import { useSelector } from "react-redux";
+
 
 export default function Header() {
   const [favoritesIndic, setFavoritesIndic] = useState(2);
   const [cartIndic, setCartIndic] = useState(4);
   const [theme, setTheme] = useState(true);
+const [popUp, setPopUp] = useState(false)
+const [popUp1, setPopUp1] = useState(false)
+const loading = useSelector((state) => state.category.loading)
+
+
 
   function handleMan() {
-    alert(1);
+    
+    setPopUp(!popUp)
+    setPopUp1(false)
+   
+   
   }
   function handleWomen() {
-    alert(2);
+    setPopUp1(!popUp1)
+    setPopUp(false)
+  
   }
   function handleTheme() {
     setTheme(!theme);
   }
-  return (
+  return (<>
     <div className={styles.header}>
       <div className={styles.blackLine}>
         <div className={styles.navBar}>
@@ -48,17 +62,25 @@ export default function Header() {
           <div className={styles.bar2}>
             <img src={Person} alt="person" />
             <div className={styles.subBar2}>
-              <div>Войти</div>/<div>Регистрация</div>
+              <Link to="/sign-in">
+                <div>Войти</div>
+              </Link>
+              /
+              <Link to="/sign-up">
+                <div>Регистрация</div>
+              </Link>
             </div>
           </div>
         </div>
       </div>
 
       <div className={styles.whiteLine}>
-        <Link to="/"><span className={styles.logo}>B O O M Z I</span></Link>
+        <Link to="/">
+          <span className={styles.logo}>B O O M Z I</span>
+        </Link>
         <ul className={styles.categoriesBar}>
-          <li onClick={handleMan}>Для мужчин</li>
-          <li onClick={handleWomen}>Для женщин</li>
+          <button disabled={loading} onClick={handleMan}>  Для мужчин</button>
+          <button disabled={loading} onClick={handleWomen}>Для женщин</button>
         </ul>
         <div className={styles.iconsBar}>
           <Link to="/favorites" className={styles.favoritesBar}>
@@ -72,5 +94,8 @@ export default function Header() {
         </div>
       </div>
     </div>
+    {popUp ? <Category/> : ""}
+    {popUp1 ? <Category/> : ''}
+    </>
   );
 }

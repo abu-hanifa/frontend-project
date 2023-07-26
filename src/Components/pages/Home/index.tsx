@@ -1,16 +1,15 @@
-import { Header } from 'antd/es/layout/layout'
-import React from 'react'
-import Category from '../../Category/Category'
-import '../../../App.css'
+
+import React from "react";
+import NewArrivals from "../../NewArrivals";
+import NewCollection from "../../NewCollection";
 
 const Home = () => {
   return (
     <div>
-      <Header/>
-      <Category/>
-      text
+      <NewCollection />
+      <NewArrivals />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

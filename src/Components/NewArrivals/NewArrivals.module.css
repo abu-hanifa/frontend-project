@@ -1,0 +1,51 @@
+.Wrapper {
+  position: relative;
+}
+.ThreeBlock {
+  display: flex;
+  position: absolute;
+  top: -50px;
+  left: 25%;
+}
+.ThreeBlock img {
+  width: 250px;
+  border-radius: 4px;
+  padding: 0 15px;
+}
+.main {
+  text-align: center;
+  padding: 300px 0 100px 0;
+}
+.main span {
+  display: block;
+}
+.slider {
+  margin-top: 10px;
+  padding: 0 15px;
+}
+.textGray {
+  font-size: 13px;
+  color: gray;
+}
+.headerText {
+  font-size: 28px;
+  font-weight: 600;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.popularCat {
+  text-align: center;
+}
+
+.popularCat img {
+  width: 100px;
+}
+.category {
+  display: flex;
+  justify-content: center;
+}
+
+.category div {
+  padding: 10px;
+}
