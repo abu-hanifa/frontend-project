@@ -16,7 +16,6 @@ export default function Header() {
   const [cartIndic, setCartIndic] = useState(4);
   const [theme, setTheme] = useState(true);
 const [popUp, setPopUp] = useState(false)
-const [popUp1, setPopUp1] = useState(false)
 const loading = useSelector((state) => state.category.loading)
 
 
@@ -24,15 +23,11 @@ const loading = useSelector((state) => state.category.loading)
   function handleMan() {
     
     setPopUp(!popUp)
-    setPopUp1(false)
+    
    
    
   }
-  function handleWomen() {
-    setPopUp1(!popUp1)
-    setPopUp(false)
-  
-  }
+ 
   function handleTheme() {
     setTheme(!theme);
   }
@@ -96,7 +91,7 @@ const loading = useSelector((state) => state.category.loading)
       </div>
     </div>
     {popUp ? <Category/> : ""}
-    {popUp1 ? <Category/> : ''}
+   
     </>
   );
 }
