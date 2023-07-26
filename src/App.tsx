@@ -11,6 +11,7 @@ import Cart from "./Components/pages/Cart/index";
 import "./App.css";
 
 import { RootState } from "./app/store";
+import Footer from "./Components/Footer";
 
 function App() {
   const token = useSelector((state: RootState) => state.application.token);
@@ -34,6 +35,7 @@ function App() {
           </>
         )}
       </Routes>
+      <Footer/>
     </div>
   );
 }
