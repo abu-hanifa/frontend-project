@@ -1,14 +1,14 @@
-import React from 'react'
-import NewArrivals from '../../NewArrivals'
-import NewCollection from '../../NewCollection'
+import React from "react";
+import NewArrivals from "../../NewArrivals";
+import NewCollection from "../../NewCollection";
 
 const Home = () => {
   return (
     <div>
-      <NewCollection/>
-      <NewArrivals/>
+      <NewCollection />
+      <NewArrivals />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
