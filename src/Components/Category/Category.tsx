@@ -13,8 +13,11 @@ function Category() {
     dispatch(fetchCategory());
   }, []);
 
+  
+
   return (
     <div className={styles.rod}>
+        
         <div className={styles.content}>
       <div className={styles.category}>
         <h2>Одежда</h2>

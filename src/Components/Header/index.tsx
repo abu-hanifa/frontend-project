@@ -8,6 +8,8 @@ import moon from "../../assets/image/moon4.png";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Category from "../Category/Category";
+import { useSelector } from "react-redux";
+
 
 export default function Header() {
   const [favoritesIndic, setFavoritesIndic] = useState(2);
@@ -15,9 +17,15 @@ export default function Header() {
   const [theme, setTheme] = useState(true);
 const [popUp, setPopUp] = useState(false)
 const [popUp1, setPopUp1] = useState(false)
+const loading = useSelector((state) => state.category.loading)
+
+
+
   function handleMan() {
+    
     setPopUp(!popUp)
     setPopUp1(false)
+   
    
   }
   function handleWomen() {
@@ -71,8 +79,8 @@ const [popUp1, setPopUp1] = useState(false)
           <span className={styles.logo}>B O O M Z I</span>
         </Link>
         <ul className={styles.categoriesBar}>
-          <li onClick={handleMan}>Для мужчин</li>
-          <li onClick={handleWomen}>Для женщин</li>
+          <button disabled={loading} onClick={handleMan}>  Для мужчин</button>
+          <button disabled={loading} onClick={handleWomen}>Для женщин</button>
         </ul>
         <div className={styles.iconsBar}>
           <Link to="/favorites" className={styles.favoritesBar}>
