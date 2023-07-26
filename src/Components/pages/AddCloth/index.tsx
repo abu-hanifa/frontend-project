@@ -49,7 +49,7 @@ const AddCloth = () => {
       {popUp ? (
         <div className={styles.categoryPopUp}>
           {categories.map((item) => (
-            <div>{item.name}</div>
+            <div onClick={() => setCategory(item._id)}>{item.name}</div>
           ))}
         </div>
       ) : (
