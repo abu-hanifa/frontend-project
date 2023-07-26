@@ -48,14 +48,22 @@ export default function Header() {
           <div className={styles.bar2}>
             <img src={Person} alt="person" />
             <div className={styles.subBar2}>
-              <div>Войти</div>/<div>Регистрация</div>
+              <Link to="/sign-in">
+                <div>Войти</div>
+              </Link>
+              /
+              <Link to="/sign-up">
+                <div>Регистрация</div>
+              </Link>
             </div>
           </div>
         </div>
       </div>
 
       <div className={styles.whiteLine}>
-        <Link to="/"><span className={styles.logo}>B O O M Z I</span></Link>
+        <Link to="/">
+          <span className={styles.logo}>B O O M Z I</span>
+        </Link>
         <ul className={styles.categoriesBar}>
           <li onClick={handleMan}>Для мужчин</li>
           <li onClick={handleWomen}>Для женщин</li>

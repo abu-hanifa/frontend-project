@@ -1,0 +1,26 @@
+.ThreeBlock{
+    display: flex;
+    justify-content: center;
+}
+.ThreeBlock img{
+    width: 300px;
+    border-radius: 4px;
+    padding: 0 15px;
+}
+
+.slider{
+    text-align: center;
+}
+.slider span{
+    display: block;
+}
+.textGray{
+    font-size: 13px;
+    color: gray;
+}
+.headerText{
+    font-size: 28px;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
