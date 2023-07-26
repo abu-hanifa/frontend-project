@@ -11,6 +11,7 @@ import Cart from "./Components/pages/Cart/index";
 import "./App.css";
 
 import { RootState } from "./app/store";
+import OneCloth from "./Components/pages/OneCloth";
 import Footer from "./Components/Footer";
 
 function App() {
@@ -24,14 +25,17 @@ function App() {
             <Route path="/sign-up" element={<Navigate to="/" />} />
             <Route path="/sign-in" element={<Navigate to="/" />} />
             <Route path="/" element={<Home />} />
-            <Route path="/cart" element={<Cart/>} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path='/oneCloth' element={<OneCloth />} />
           </>
         ) : (
           <>
             <Route path="/sign-up" element={<SignUp />} />
             <Route path="/sign-in" element={<SignIn />} />
             <Route path="/" element={<Home />} />
+            <Route path='/oneCloth' element={<OneCloth />} />
             <Route path="/cart" element={<Cart/>} />
+
           </>
         )}
       </Routes>
