@@ -1,3 +1,4 @@
+
 import React from "react";
 import NewArrivals from "../../NewArrivals";
 import NewCollection from "../../NewCollection";

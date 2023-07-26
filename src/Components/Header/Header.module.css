@@ -59,9 +59,13 @@ color: rgb(128, 128, 128);
   padding: 0;
   font-size: 20px;
 }
-.categoriesBar li {
+.categoriesBar button {
   cursor: pointer;
   white-space: nowrap;
+  border: none;
+ background-color: transparent;
+ font-size: 20px;
+  
 }
 .favoritesBar {
   display: flex;
@@ -158,4 +162,11 @@ color: rgb(128, 128, 128);
   width: 20px;
   height: 20px;
   border-radius: 50%;
+}
+.inp {
+  width: 380px;
+  height: 44px;
+  border-radius: 4px;
+  color: gray;
+  border: 1px solid grey;
 }

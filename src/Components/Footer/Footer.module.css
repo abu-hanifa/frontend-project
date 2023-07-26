@@ -1,0 +1,29 @@
+.Wrapper {
+  background-color: #1e212c;
+  padding: 30px 220px 20px 220px;
+}
+.subWrapper {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+.container {
+  padding: 0 20px;
+}
+.container div {
+  color: white;
+}
+.container a {
+  color: #a5a6ab;
+  text-decoration: none;
+}
+.copyright {
+  display: flex;
+  justify-content: space-between;
+}
+.copyright div {
+  color: #a5a6ab;
+}
+.grayText {
+  color: #a5a6ab !important;
+}
