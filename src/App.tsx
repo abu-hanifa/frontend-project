@@ -4,13 +4,13 @@ import { Navigate, Route, Routes } from "react-router-dom";
 
 import Header from "./Components/Header";
 import Home from "./Components/pages/Home";
-import SignUp from "./Components/SignUp";
-import SignIn from "./Components/SignIn";
+import SignUp from "./Components/pages/SignUp";
+import SignIn from "./Components/pages/SignIn";
+import Cart from "./Components/pages/Cart";
 
 import "./App.css";
 
 import { RootState } from "./app/store";
-import Cart from "./Components/Cart";
 
 function App() {
   const token = useSelector((state: RootState) => state.application.token);
