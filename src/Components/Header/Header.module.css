@@ -32,6 +32,10 @@
   display: flex;
   gap: 10px;
 }
+.subBar2 a{
+text-decoration: none;
+color: rgb(128, 128, 128);
+}
 .subBar2 div {
   cursor: pointer;
 }
