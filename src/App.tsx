@@ -6,16 +6,12 @@ import Header from "./Components/Header";
 import Home from "./Components/pages/Home";
 import SignUp from "./Components/pages/SignUp";
 import SignIn from "./Components/pages/SignIn";
-
-import Cart from "./Components/pages/Cart/index";
 import Cart from "./Components/pages/Cart";
 import Profile from "./Components/pages/Profile";
 
 import "./App.css";
 
 import { RootState } from "./app/store";
-import OneCloth from "./Components/pages/OneCloth";
-import Footer from "./Components/Footer";
 
 function App() {
   const token = useSelector((state: RootState) => state.application.token);
@@ -29,27 +25,17 @@ function App() {
             <Route path="/sign-in" element={<Navigate to="/" />} />
             <Route path="/" element={<Home />} />
             <Route path="/cart" element={<Cart />} />
-
-            <Route path='/oneCloth' element={<OneCloth />} />
-
             <Route path="/profile" element={<Profile />} />
-
           </>
         ) : (
           <>
             <Route path="/sign-up" element={<SignUp />} />
             <Route path="/sign-in" element={<SignIn />} />
-
             <Route path="/profile" element={<Navigate to="/" />} />
-
             <Route path="/" element={<Home />} />
-            <Route path='/oneCloth' element={<OneCloth />} />
-            <Route path="/cart" element={<Cart/>} />
-
           </>
         )}
       </Routes>
-      <Footer/>
     </div>
   );
 }
