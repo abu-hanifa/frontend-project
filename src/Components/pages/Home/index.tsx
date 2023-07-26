@@ -1,14 +1,23 @@
-import React from "react";
-import NewArrivals from "../../NewArrivals";
-import NewCollection from "../../NewCollection";
+import React from 'react'
+import Category from '../../Category/Category'
+
+import { Header } from 'antd/es/layout/layout'
+
+import NewArrivals from '../../NewArrivals'
+
 
 const Home = () => {
   return (
     <div>
-      <NewCollection />
-      <NewArrivals />
-    </div>
-  );
-};
 
-export default Home;
+      
+      
+
+      {/* <Category/> */}
+      <NewArrivals/>
+
+    </div>
+  )
+}
+
+export default Home
