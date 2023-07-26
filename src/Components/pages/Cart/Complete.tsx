@@ -19,13 +19,15 @@ export default function Complete() {
         <div className={styles.summaryItemText}>Скидка</div>
         <div className={styles.summaryItemPrice}>$ -5.90</div>
       </div>
+      <hr/>
       <div className={styles.summaryItem }>
         <div className={styles.totalSummaryItemText}>Итого сумма</div>
         <div className={styles.totalSummaryItemPrice}>$ 0</div>
       </div>
-        
+      <button className={styles.checkoutButton}>Сделать заказ</button>
     </div>
-    <button className={styles.checkoutButton}>Сделать заказ</button>
+    
+    
     </>
   );
 }
