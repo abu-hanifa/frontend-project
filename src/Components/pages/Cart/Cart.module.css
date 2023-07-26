@@ -1,5 +1,12 @@
 /* Summary.module.css */
 
+
+.mainContainer {
+    margin: 0 100px;
+    width: 740px;
+    
+}
+
 .summary {
     flex: 1;
     padding: 25px;
@@ -49,6 +56,7 @@
     font-weight: 200;
     border: none;
     border-radius: 4px;
+    cursor: pointer;
 }
 
 hr {
@@ -56,4 +64,63 @@ hr {
     height: 1px;
     width: 390px;
     margin-left: -25px;
+}
+
+/* reviev */
+
+
+.checkout{
+    width: 740px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkout h2 {
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.checkout a {
+    color: rgba(23, 105, 106, 1);
+    font-weight: 700;
+}
+
+
+.singIn{
+    display: flex;
+    background-color: rgba(23, 105, 106, 0.06);
+    padding-left: 20px;
+    border: 1px solid rgba(23, 105, 106, 0.25);
+    border-radius: 4px;
+    margin-bottom: 30px;
+
+}
+
+.singIn p {
+    color: rgba(23, 105, 106, 1);
+    margin-left: 10px;
+}
+
+.singIn a {
+    color: rgba(23, 105, 106, 1);
+    font-weight: 600;
+}
+
+.line{
+    border: 1px solid rgba(229, 232, 237, 1);
+    margin-bottom: 30px;
+}
+
+h3 {
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+/* Clothes */
+
+.clothesContainer {
+    background-color: rgba(244, 245, 246, 1);
+    border-radius: 4px ;
 }
