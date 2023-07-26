@@ -5,12 +5,10 @@ import men from "../../assets/image/men.png";
 
 const ThreeBlocks = () => {
   return (
-    <div>
-      <div className={styles.ThreeBlock}>
-        <img src={women} alt="women" />
-        <img src={men} alt="men" />
-        <img src={men} alt="men" />
-      </div>
+    <div className={styles.ThreeBlock}>
+      <img src={women} alt="women" />
+      <img src={men} alt="men" />
+      <img src={men} alt="men" />
     </div>
   );
 };

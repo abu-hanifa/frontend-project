@@ -1,0 +1,59 @@
+/* Summary.module.css */
+
+.summary {
+    flex: 1;
+    padding: 25px;
+    background-color: rgba(229, 232, 237, 1);
+    width: 390px;
+    border-radius: 4px;
+    margin-bottom: 25px;
+}
+
+.summaryTitle {
+    font-weight: 400;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.summaryItem {
+    margin: 30px 0px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+
+.summaryItemText {
+    font-weight: 200;
+    font-size: 16px;
+
+}
+.totalSummaryItemText{
+    font-size: 20px;
+    font-weight: 400;
+}
+.totalSummaryItemPrice {
+    font-size: 20px;
+    font-weight: 400;
+
+}
+
+.checkoutButton {
+    width: 390px;
+    padding: 10px;
+    background-color: rgba(23, 105, 106, 1);
+    color: white;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 200;
+    border: none;
+    border-radius: 4px;
+}
+
+.summaryTitle hr {
+    background-color: rgba(229, 232, 237, 1);
+    height: 1px;
+    width: 390px;
+    margin-left: -25px;
+}

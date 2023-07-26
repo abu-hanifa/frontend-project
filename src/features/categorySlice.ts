@@ -1,7 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-    category: []
+    category: [],
+    loading: false
 }
 
 export const fetchCategory = createAsyncThunk(
@@ -28,7 +29,11 @@ export const fetchCategory = createAsyncThunk(
         extraReducers: (builder) => {
             builder
             .addCase(fetchCategory.fulfilled, (state, action) => {
+                state.loading = false
                 state.category = action.payload
+            })
+            .addCase(fetchCategory.pending, (state, action) => {
+                state.loading = true
             })
         }
      })
