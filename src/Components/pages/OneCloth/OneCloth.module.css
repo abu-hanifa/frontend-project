@@ -1,0 +1,164 @@
+.oneClothBack {
+  margin: 0 100px;
+}
+.d1 {
+  background-color: red;
+}
+.images {
+  background-color: blue;
+}
+.images img {
+  width: 200px;
+}
+.firstImage img {
+  width: 600px;
+}
+.subBlock {
+  display: flex;
+  gap: 100px;
+}
+.clothInfo {
+  width: 525px;
+}
+
+/*   //////////    */
+
+.infoBlock1 {
+  display: flex;
+  align-items: center;
+}
+.discountPrice {
+  color: #FF4242;
+  font-size: 26px;
+  margin-right: 18px;
+}
+.price {
+  color: #787A80;
+  font-size: 22px;
+  margin-right: 33px;
+  text-decoration:line-through;
+}
+.discount {
+  background-color: #FF4242;
+  color: white;
+  font-size: 19px;
+  width: 50px;
+  height: 30px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*   //////////    */
+
+.infoBlock2 {
+  margin-top: 24px;
+}
+.sizes {
+  display: flex;
+  gap: 10px;
+}
+.sizeButton {
+  border: 1px solid #17696A;
+  border-radius: 4px;
+  width: 40px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #17696A;
+}
+.sizeChart {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 100px;
+}
+.sizeChart span {
+  margin-left: 6px;
+}
+.sizesImageYes {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.sizesImageYes img {
+  display: flex;
+  margin: 100px auto;
+  width: 1000px;
+}
+.sizesImageNo {
+  display: none;
+}
+.offButton {
+  position: absolute;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: #787A80;
+  font-size: 30px;
+  right: 240px;
+  top: 125px;
+  z-index: 999;
+}
+
+
+/*   //////////    */
+
+.infoBlock3 {
+  display: flex;
+  gap: 24px;
+  margin-top: 32px;
+}
+.counterBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 80px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: white;
+  border: 1px solid #17696A;
+  color: #17696A;
+}
+.counterBlock button {
+  background-color: inherit;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  color: #17696A;
+}
+.addingCart {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 245px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: #17696A;
+  color: white;
+}
+.addFavorite {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 153px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: white;
+  color: #17696A;
+  border: 1px solid #17696A;
+}
+.infoBlock4 {
+  margin-top: 32px;
+}
