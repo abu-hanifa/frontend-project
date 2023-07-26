@@ -4,10 +4,7 @@ import { Carousel } from "antd";
 import men from "../../assets/image/men.png";
 
 const Slider = () => {
-  const onChange = (currentSlide: number) => {
-    console.log(currentSlide);
-  };
-
+    
   const contentStyle: React.CSSProperties = {
     margin: 0,
     height: "200px",
@@ -24,7 +21,7 @@ const Slider = () => {
         Ознакомьтесь с нашими последними поступлениями в предстоящем сезоне
       </span>
       <div className={styles.slider}>
-        <Carousel autoplay afterChange={onChange} slidesToShow={6}>
+        <Carousel autoplay slidesToShow={6}>
           <div>
             <img style={contentStyle} src={men} alt="men" />
           </div>
