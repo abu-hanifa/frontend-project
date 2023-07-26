@@ -6,6 +6,7 @@
     display: flex;
     width: 700px;
     justify-content: space-between;
+    margin-left: 200px;
 }
 .category {
     display: flex;
@@ -47,6 +48,7 @@
     border: 1px solid #17696A;
     border-radius: 4px;
     color: #17696A;
+    margin: 0;
    
     
 }
