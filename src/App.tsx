@@ -6,7 +6,7 @@ import Header from "./Components/Header";
 import Home from "./Components/pages/Home";
 import SignUp from "./Components/pages/SignUp";
 import SignIn from "./Components/pages/SignIn";
-import Cart from "./Components/pages/Cart";
+import Cart from "./Components/pages/Cart/index";
 
 import "./App.css";
 
@@ -23,14 +23,14 @@ function App() {
             <Route path="/sign-up" element={<Navigate to="/" />} />
             <Route path="/sign-in" element={<Navigate to="/" />} />
             <Route path="/" element={<Home />} />
-            <Route path="/cart" element={<Cart />} />
+            <Route path="/cart" element={<Cart/>} />
           </>
         ) : (
           <>
             <Route path="/sign-up" element={<SignUp />} />
             <Route path="/sign-in" element={<SignIn />} />
-
             <Route path="/" element={<Home />} />
+            <Route path="/cart" element={<Cart/>} />
           </>
         )}
       </Routes>
