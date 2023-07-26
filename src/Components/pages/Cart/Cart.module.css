@@ -1,10 +1,14 @@
 /* Summary.module.css */
 
+.general {
+    display: flex;
+    width: 1250px ;
+}
 
 .mainContainer {
     margin: 0 100px;
     width: 740px;
-    
+    display: flex;
 }
 
 .summary {
@@ -48,6 +52,7 @@
 
 .checkoutButton {
     width: 390px;
+    margin-left: -25px;
     padding: 10px;
     background-color: rgba(23, 105, 106, 1);
     color: white;
@@ -59,7 +64,7 @@
     cursor: pointer;
 }
 
-.summaryTitle hr {
+hr {
     background-color: rgba(229, 232, 237, 1);
     height: 1px;
     width: 390px;
@@ -124,3 +129,108 @@ h3 {
     background-color: rgba(244, 245, 246, 1);
     border-radius: 4px ;
 }
+
+.cloth {
+    padding: 24px;
+    border-bottom: 1px solid rgba(229, 232, 237, 1);
+    display: flex;
+}
+
+.cloth img {
+    width: 80px;
+    margin: 0 22px;
+}
+
+.clothName {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.clothProp p {
+    font-size: 12px;
+    color: rgba(120, 122, 128, 1) ;
+}
+
+.clothProp span {
+    color: rgba(66, 69, 81, 1);
+}
+
+.counterBlock {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 80px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: white;
+    border: 1px solid rgba(215, 218, 221, 1);
+    color: rgba(66, 69, 81, 1);
+    margin: 0 40px;
+  }
+  .counterBlock button {
+    background-color: inherit;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+  }
+
+  .infoBlock1 {
+    display: flex;
+    align-items: center;
+    margin-bottom: auto;
+  }
+
+  .discountPrice {
+    color: #FF4242;
+    font-size: 26px;
+  }
+  .price {
+    color: #787A80;
+    font-size: 12px;
+    text-decoration:line-through;
+  }
+  .discount {
+    background-color: #FF4242;
+    color: white;
+    font-size: 16px;
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+
+  .buttons{
+      margin-left: 30px;
+  }
+  .buttons img{
+      width: 15px;
+      margin: 0;
+      cursor: pointer;
+  }
+
+  .buttons div {
+      display: flex;
+      font-size: 12px;
+  }
+
+  .buttons button {
+      color: rgba(23, 105, 106, 1);
+      border: 1px solid rgba(23, 105, 106, 1);
+      padding: 0 24px;
+      line-height: 36px;
+      border-radius: 4px;
+  }
+  .buttons > div {
+      margin-top: 20px;
+      line-height: 36px;
+      font-weight: bold;
+      font-size: 12px;
+      color: rgba(66, 69, 81, 1);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+  }
