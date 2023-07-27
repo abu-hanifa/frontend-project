@@ -43,12 +43,13 @@ export default function OneCloth() {
       <div className={styles.subBlock}>
         <div className={styles.images}>
           <div className={styles.firstImage}>
-            <img src={`http://localhost:4000/${cloth.image[0].path}`} alt="1" />
+            
+            <img className={styles.img} src={`http://localhost:4000/${cloth.image[0].path}`} alt="1" />
           </div>
-          <img src="" alt="2" />
-          <img src="" alt="3" />
-          <img src="" alt="4" />
-          <img src="" alt="5" />
+          <img className={styles.img1} src={`http://localhost:4000/${cloth.image[1].path}`} alt="2" />
+          <img className={styles.img1} src={`http://localhost:4000/${cloth.image[2].path}`} alt="3" />
+          <img className={styles.img1} src={`http://localhost:4000/${cloth.image[3].path}`} alt="4" />
+        
         </div>
         <div className={styles.clothInfo}>
           <div className={styles.infoBlock1}>
