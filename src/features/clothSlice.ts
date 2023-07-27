@@ -36,14 +36,48 @@ export const createCloth = createAsyncThunk<ReturnType<any>, createImg>(
   }
 );
 
+export const fetchCloth = createAsyncThunk<ReturnType<any>, createImg>('fetch/cloth', async (data, thunkAPI) => {
+  try {
+    const res = await fetch('http://localhost:4000/cloth')
+    const cloth = await res.json()
+
+    if(cloth.error) {
+      return thunkAPI.rejectWithValue(cloth.error)
+    }
+    return cloth
+    
+  } catch (error) {
+    thunkAPI.rejectWithValue(error)
+  }
+})
+
+export const fetchCategoryCloth = createAsyncThunk<ReturnType<any>, createImg>('fetch/category/cloth', async (id, thunkAPI) => {
+  try {
+    const res = await fetch(`http://localhost:4000/cloth/category${id}`)
+  const cloth = res.json()
+
+  return cloth
+  } catch (error) {
+    thunkAPI.rejectWithValue(error)
+  }
+  
+})
+
 const clothsSlice = createSlice({
   name: "cloths",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(createCloth.fulfilled, (state, action) => {
+    builder
+    .addCase(createCloth.fulfilled, (state, action) => {
       state.cloths.push(action.payload);
-    });
+    })
+    .addCase(fetchCloth.fulfilled, (state, action) => {
+      state.cloths = action.payload
+    })
+    .addCase(fetchCategoryCloth.fulfilled, (state, action) => {
+      state.cloths = action.payload
+    })
   },
 });
 
