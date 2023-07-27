@@ -3,6 +3,7 @@ import styles from "./Cart.module.css";
 import { Link } from "react-router-dom";
 import Person from "../../../assets/SvgIcons/Person1.svg";
 import Heart from "../../../assets/SvgIcons/outline.svg";
+import Paypal from "../../../assets/SvgIcons/paypal.svg";
 import imgMin from "../../../assets/image/imageMin.png";
 import Shipping from "./Shipping";
 const ItemsReview = () => {
@@ -59,7 +60,6 @@ const ItemsReview = () => {
         </div>
         <h3>2.Информация о доставке</h3>
         <div className={styles.inputContainer}>
-          
           <div className={styles.inputWrapper}>
             <label htmlFor="firstName" className={styles.inputLabel}>
               Имя:
@@ -110,38 +110,50 @@ const ItemsReview = () => {
           </div>
         </div>
         <div className={styles.checkboxWrapper}>
-          <input
-            type="checkbox"
-            id="confirmCheckbox"
-          />
-          <label htmlFor="confirmCheckbox">Адрес доставки и оплаты совпадает?</label>
+          <input type="checkbox" id="confirmCheckbox" />
+          <label htmlFor="confirmCheckbox">
+            Адрес доставки и оплаты совпадает?
+          </label>
         </div>
         <div className={styles.line}></div>
         <h3>3.Метод доставки</h3>
 
-    <div className={styles.deliveryMethods}>
+        <div className={styles.deliveryMethods}>
+          <div className={styles.deliveryMethod}>
+            <input type="radio" name="delivery" id="method2" value="method2" />
+            <label htmlFor="method2">Курьерская доставка</label>
+            <span className={styles.priceDelivery}>250 руб.</span>
+          </div>
 
-    <div className={styles.deliveryMethod}>
-        <input type="radio" name="delivery" id="method2" value="method2" />
-        <label htmlFor="method2">Курьерская доставка</label>
-        <span className={styles.priceDelivery}>250 руб.</span>
-      </div>
+          <div className={styles.deliveryMethod}>
+            <input type="radio" name="delivery" id="method1" value="method1" />
+            <label htmlFor="method1">Самовывоз</label>
+            <span className={styles.priceDelivery}>Бесплатно</span>
+          </div>
 
-      <div className={styles.deliveryMethod}>
-        <input type="radio" name="delivery" id="method1" value="method1" />
-        <label htmlFor="method1">Самовывоз</label>
-        <span className={styles.priceDelivery}>Бесплатно</span>
-      </div>
-
-      <div className={styles.deliveryMethod}>
-        <input type="radio" name="delivery" id="method3" value="method3" />
-        <label htmlFor="method3">Почта России</label>
-        <span className={styles.priceDelivery}>200 руб.</span>
-      </div>
-    </div>
-    <div className={styles.line}></div>
+          <div className={styles.deliveryMethod}>
+            <input type="radio" name="delivery" id="method3" value="method3" />
+            <label htmlFor="method3">Почта России</label>
+            <span className={styles.priceDelivery}>200 руб.</span>
+          </div>
+        </div>
+        <div className={styles.line}></div>
         <h3>4.Оплата</h3>
 
+        <div className={styles.cardContainer}>
+          <div className={styles.cardWrapper}></div>
+          <div className={styles.payMethods}>
+            <div className={styles.payMethod}>
+              <input type="radio" name="pay" id="pay1" value="pay1" />
+              <label htmlFor="pay1">Pay Pal</label>
+              <img src={Paypal} alt="Paypal" />
+            </div>
+            <div className={styles.payMethod}>
+              <input type="radio" name="pay" id="cash" value="cash" />
+              <label htmlFor="cash">Заплатить при получении</label>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
