@@ -281,7 +281,9 @@ h3 {
     color: black;
     border: 1px solid rgba(215, 218, 221, 1);
     border-radius: 4px;
-    /* cursor: pointer; */
+
+   
+
   }
   
   .inputField:focus {
@@ -359,4 +361,20 @@ h3 {
     color: rgba(66, 69, 81, 1);
   }
 
+  .cardWrapper {
+      gap: 15px;
+  }
+
   
+  .payMethod{
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      width: 390px;
+      background-color:rgba(255, 255, 255, 1);
+      padding: 14px;
+      border: 1px solid rgba(229, 232, 237, 1);
+      border-radius: 4px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
