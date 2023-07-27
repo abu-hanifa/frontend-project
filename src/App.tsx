@@ -17,7 +17,7 @@ import OneCloth from "./Components/pages/OneCloth";
 import Footer from "./Components/Footer";
 import AddCloth from "./Components/pages/AddCloth";
 import CategoryCloth from "./Components/clothes/CategoryCloth";
-import Category from "./Components/Category/Category";
+
 
 function App() {
   const token = useSelector((state: RootState) => state.application.token);
@@ -36,7 +36,8 @@ function App() {
             <Route path='/oneCloth' element={<OneCloth />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/cloths/:id" element={<CategoryCloth/>}/>
-            <Route path="/" element={<Category/>}/>
+            <Route path="/onecloth/:id" element={<OneCloth/>}/>
+            
           </>
         ) : (
           <>
@@ -48,6 +49,7 @@ function App() {
             <Route path="/cart" element={<Cart/>} />
             <Route path="/add-cloth" element={<Navigate to="/" />}/>
             <Route path="/cloths/:id" element={<CategoryCloth/>}/>
+            <Route path="/onecloth/:id" element={<OneCloth/>}/>
             
 
           </>

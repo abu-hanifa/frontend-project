@@ -46,7 +46,7 @@ function Category({popUp}) {
           if (item.subcategories === "Обувь") {
             return (
               <>
-                <button onClick={() => handleClick(item._id)} className={styles.text}>{item.name}</button>
+                <Link to={`/cloths/${item._id}`} onClick={() => handleClick(item._id)} className={styles.text}>{item.name}</Link>
               </>
             );
           }
@@ -58,7 +58,7 @@ function Category({popUp}) {
           if (item.subcategories === "аксессуары") {
             return (
               <>
-                <button onClick={() => handleClick(item._id)} className={styles.text}>{item.name}</button>
+                <Link to={`/cloths/${item._id}`} onClick={() => handleClick(item._id)} className={styles.text}>{item.name}</Link>
               </>
             );
           }
