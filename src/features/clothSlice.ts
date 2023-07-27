@@ -53,8 +53,9 @@ export const fetchCloth = createAsyncThunk<ReturnType<any>, createImg>('fetch/cl
 
 export const fetchCategoryCloth = createAsyncThunk<ReturnType<any>, createImg>('fetch/category/cloth', async (id, thunkAPI) => {
   try {
-    const res = await fetch(`http://localhost:4000/cloth/category${id}`)
+    const res = await fetch(`http://localhost:4000/cloth/category/${id}`)
   const cloth = res.json()
+  
 
   return cloth
   } catch (error) {

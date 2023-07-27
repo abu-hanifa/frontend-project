@@ -1,6 +1,10 @@
 .rod {
     display: flex;
     justify-content: center;
+    position: absolute;
+    left: 5%;
+    z-index: 999;
+    background-color: white;
 }
 .content {
     display: flex;
@@ -18,7 +22,10 @@
 }
 .text {
     margin-bottom: 8px;
-    height: 21px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    text-align: start;
 }
 .line {
     border: 1px  solid rgb(170, 168, 168);

@@ -3,15 +3,24 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchCategory } from "../../features/categorySlice";
 import styles from './category.module.css'
 import boys from '../../assets/image/image.png'
+import { fetchCategoryCloth } from "../../features/clothSlice";
+import { AppDispatch, RootState } from "../../app/store";
+import { Link } from "react-router-dom";
 
 
-function Category() {
-  const category = useSelector((state) => state.category.category);
-  const dispatch = useDispatch();
+function Category({popUp}) {
+  const category = useSelector((state:RootState) => state.category.category);
+  const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
     dispatch(fetchCategory());
   }, []);
+
+  function handleClick (id) {
+    popUp(false)
+
+    dispatch(fetchCategoryCloth(id))
+  }
 
   
 
@@ -25,7 +34,7 @@ function Category() {
           if (item.subcategories === "Одежда") {
             return (
               <>
-                <div className={styles.text}>{item.name}</div>
+                <Link to={`/cloths/${item._id}`} onClick={() => handleClick(item._id)} className={styles.text}>{item.name}</Link>
               </>
             );
           }
@@ -37,7 +46,7 @@ function Category() {
           if (item.subcategories === "Обувь") {
             return (
               <>
-                <div className={styles.text}>{item.name}</div>
+                <button onClick={() => handleClick(item._id)} className={styles.text}>{item.name}</button>
               </>
             );
           }
@@ -49,7 +58,7 @@ function Category() {
           if (item.subcategories === "аксессуары") {
             return (
               <>
-                <div className={styles.text}>{item.name}</div>
+                <button onClick={() => handleClick(item._id)} className={styles.text}>{item.name}</button>
               </>
             );
           }
