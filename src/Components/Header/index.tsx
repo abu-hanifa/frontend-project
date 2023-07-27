@@ -102,7 +102,7 @@ export default function Header() {
         </div>
       </div>
       {popUp ? <Category /> : ""}
-      {popUp1 ? <Category /> : ""}
+     
     </>
   );
 }
