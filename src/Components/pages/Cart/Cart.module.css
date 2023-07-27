@@ -64,7 +64,7 @@
     cursor: pointer;
 }
 
-hr {
+.summaryTitle hr {
     background-color: rgba(229, 232, 237, 1);
     height: 1px;
     width: 390px;
