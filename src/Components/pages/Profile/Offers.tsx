@@ -5,13 +5,15 @@ import RightShevron from "../../../assets/SvgIcons/RightShevron.svg";
 
 function Offers() {
   return (
-    <div className={styles.container}>
-      <div className={styles.offer}>
-        <img src={LeftShevron} alt="Shevron" />
-        Up to 70% Off.
-      </div>
-      <div className={styles.offerText}>Shop our latest sale styles</div>
-      <img src={RightShevron} alt="Shevron" />
+    <div className={styles.offerWrap}>
+        <div className={styles.fix}>
+          <img src={LeftShevron} alt="Shevron" />
+                <div className={styles.offer}>
+          Up to 70% Off.Shop our latest sale styles
+                </div>
+                {/* <div className={styles.offerText}></div> */}
+                <img src={RightShevron} alt="Shevron" />
+        </div>
     </div>
   );
 }

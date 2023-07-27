@@ -4,6 +4,7 @@ import Offers from './Offers'
 import BreadCramb from './BreadCramb'
 import MyProfile from './MyProfile'
 import UserSideBar from './UserSideBar'
+import MainProfile from './MainProfile'
 
 
 const Profile = () => {
@@ -11,8 +12,7 @@ const Profile = () => {
     <div>
       <Offers />
       <BreadCramb />
-      <UserSideBar />
-      <MyProfile />
+      <MainProfile/>
     </div>
   )
 }
