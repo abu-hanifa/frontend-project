@@ -3,7 +3,8 @@ import styles from './Cart.module.css'
 
 export default function Complete() {
   return (
-    <>
+    <div className={styles.mainSumm}>
+    <div className={styles.sumWrapper}>
     <div className={styles.summary}>
       <div className={styles.summaryTitle}>Сумма заказа</div>
       <hr/>
@@ -24,10 +25,11 @@ export default function Complete() {
         <div className={styles.totalSummaryItemText}>Итого сумма</div>
         <div className={styles.totalSummaryItemPrice}>$ 0</div>
       </div>
-      <button className={styles.checkoutButton}>Сделать заказ</button>
+      
+    </div>
+    <button className={styles.checkoutButton}>Сделать заказ</button>
     </div>
     
-    
-    </>
+    </div>
   );
 }

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Person from "../../../assets/SvgIcons/Person1.svg";
 import Heart from "../../../assets/SvgIcons/outline.svg";
 import imgMin from "../../../assets/image/imageMin.png";
+import Shipping from "./Shipping";
 const ItemsReview = () => {
   return (
     <>
@@ -50,10 +51,97 @@ const ItemsReview = () => {
               <button className={styles.delete}>Удалить</button>
               <div>
                 <div>Добавить в</div>
-                <img src={Heart} alt="favorite"/></div>
+                <img src={Heart} alt="favorite" />
+              </div>
             </div>
           </div>
+          <div className={styles.subTotal}>Сумма покупки : 0</div>
         </div>
+        <h3>2.Информация о доставке</h3>
+        <div className={styles.inputContainer}>
+          
+          <div className={styles.inputWrapper}>
+            <label htmlFor="firstName" className={styles.inputLabel}>
+              Имя:
+            </label>
+            <input
+              type="text"
+              id="firstName"
+              className={styles.inputField}
+              placeholder="Введите имя"
+            />
+          </div>
+
+          <div className={styles.inputWrapper}>
+            <label htmlFor="lastName" className={styles.inputLabel}>
+              Фамилия:
+            </label>
+            <input
+              type="text"
+              id="lastName"
+              className={styles.inputField}
+              placeholder="Введите фамилию"
+            />
+          </div>
+        </div>
+        <div className={styles.inputContainer}>
+          <div className={styles.inputWrapper}>
+            <label htmlFor="Email" className={styles.inputLabel}>
+              Email :
+            </label>
+            <input
+              type="text"
+              id="Email"
+              className={styles.inputField}
+              placeholder="Введите Email"
+            />
+          </div>
+
+          <div className={styles.inputWrapper}>
+            <label htmlFor="Phone" className={styles.inputLabel}>
+              Телефон:
+            </label>
+            <input
+              type="text"
+              id="phone"
+              className={styles.inputField}
+              placeholder="Ваш номер телефона"
+            />
+          </div>
+        </div>
+        <div className={styles.checkboxWrapper}>
+          <input
+            type="checkbox"
+            id="confirmCheckbox"
+          />
+          <label htmlFor="confirmCheckbox">Адрес доставки и оплаты совпадает?</label>
+        </div>
+        <div className={styles.line}></div>
+        <h3>3.Метод доставки</h3>
+
+    <div className={styles.deliveryMethods}>
+
+    <div className={styles.deliveryMethod}>
+        <input type="radio" name="delivery" id="method2" value="method2" />
+        <label htmlFor="method2">Курьерская доставка</label>
+        <span className={styles.priceDelivery}>250 руб.</span>
+      </div>
+
+      <div className={styles.deliveryMethod}>
+        <input type="radio" name="delivery" id="method1" value="method1" />
+        <label htmlFor="method1">Самовывоз</label>
+        <span className={styles.priceDelivery}>Бесплатно</span>
+      </div>
+
+      <div className={styles.deliveryMethod}>
+        <input type="radio" name="delivery" id="method3" value="method3" />
+        <label htmlFor="method3">Почта России</label>
+        <span className={styles.priceDelivery}>200 руб.</span>
+      </div>
+    </div>
+    <div className={styles.line}></div>
+        <h3>4.Оплата</h3>
+
       </div>
     </>
   );
