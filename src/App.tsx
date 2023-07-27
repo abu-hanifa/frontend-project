@@ -33,7 +33,7 @@ function App() {
 
             <Route path="/cart" element={<Cart/>} />
             <Route path="/add-cloth" element={<AddCloth/>}/>
-            <Route path='/oneCloth' element={<OneCloth />} />
+            <Route path='/oneCloth/:id' element={<OneCloth />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/cloths/:id" element={<CategoryCloth/>}/>
             <Route path="/onecloth/:id" element={<OneCloth/>}/>
@@ -45,7 +45,7 @@ function App() {
             <Route path="/sign-in" element={<SignIn />} />
             <Route path="/profile" element={<Navigate to="/" />} />
             <Route path="/" element={<Home />} />
-            <Route path='/oneCloth' element={<OneCloth />} />
+            <Route path='/oneCloth/:id' element={<OneCloth />} />
             <Route path="/cart" element={<Cart/>} />
             <Route path="/add-cloth" element={<Navigate to="/" />}/>
             <Route path="/cloths/:id" element={<CategoryCloth/>}/>
