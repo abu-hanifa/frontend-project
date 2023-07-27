@@ -14,10 +14,10 @@
 .summary {
     flex: 1;
     padding: 25px;
-    background-color: rgba(229, 232, 237, 1);
-    width: 390px;
+    background-color: rgba(244, 245, 246, 1);
     border-radius: 4px;
     margin-bottom: 25px;
+    
 }
 
 .summaryTitle {
@@ -27,7 +27,7 @@
 }
 
 .summaryItem {
-    margin: 30px 0px;
+    margin-top: 20px;
     display: flex;
     justify-content: space-between;
 
@@ -50,9 +50,15 @@
 
 }
 
+.sumWrapper{
+    width: 390px;
+    position: sticky;
+    top: 2em;
+
+}
+
 .checkoutButton {
     width: 390px;
-    margin-left: -25px;
     padding: 10px;
     background-color: rgba(23, 105, 106, 1);
     color: white;
@@ -64,8 +70,9 @@
     cursor: pointer;
 }
 
-.summaryTitle hr {
-    background-color: rgba(229, 232, 237, 1);
+
+hr {
+    background-color: rgba(208, 208, 208, 0.734);
     height: 1px;
     width: 390px;
     margin-left: -25px;
@@ -128,6 +135,7 @@ h3 {
 .clothesContainer {
     background-color: rgba(244, 245, 246, 1);
     border-radius: 4px ;
+    
 }
 
 .cloth {
@@ -223,6 +231,7 @@ h3 {
       padding: 0 24px;
       line-height: 36px;
       border-radius: 4px;
+      cursor: pointer;
   }
   .buttons > div {
       margin-top: 20px;
@@ -234,3 +243,120 @@ h3 {
       justify-content: space-around;
       align-items: center;
   }
+
+  .subTotal{
+    text-align: right;
+    padding: 24px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .inputContainer {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+    justify-content: space-between;
+  }
+  
+  .inputWrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 20px;
+    margin-bottom: 8px;
+  }
+  
+  .inputLabel {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: rgba(66, 69, 81, 1);
+    font-weight: 200;
+  }
+  
+  .inputField {
+    width: 350px;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 200;
+    color: black;
+    border: 1px solid rgba(215, 218, 221, 1);
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .inputField:focus {
+    outline: none;
+    border-color: dodgerblue;
+  }
+
+  .checkboxWrapper {
+      display: flex;
+      margin: 32px 0;
+      gap: 10px;
+  }
+
+  
+.deliveryMethods {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+  
+  .deliveryMethod {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .deliveryMethods{
+      gap: 30px;
+  }
+  
+  
+  /* Стили для радио-кнопки */
+  .deliveryMethod input[type="radio"] {
+    margin: 0;
+    width: 16px; 
+    height: 16px; 
+    background: inherit; 
+    border-radius: 50%; /* Круглая форма радио-кнопки */
+    border: 1px solid rgba(23, 105, 106, 1);
+    appearance: none; /* Удалить стандартный стиль */
+    outline: none;
+    cursor: pointer;
+  }
+  
+  /* Стили для check indicator */
+  .deliveryMethod input[type="radio"]::before {
+    content: '';
+    display: block;
+    width: 8px; 
+    height: 8px; 
+    background: rgba(23, 105, 106, 1); 
+    border-radius: 50%; 
+    position: relative;
+    top: 3px; 
+    left: 3px; 
+    visibility: hidden; 
+  }
+  
+  /* Стили для радио-кнопки в состоянии "checked" */
+  .deliveryMethod input[type="radio"]:checked::before {
+    visibility: visible; /* Показать check indicator при выборе */
+  }
+
+  .priceDelivery {
+    margin-left: auto; 
+    color: rgba(66, 69, 81, 1);
+    font-size: 16px;
+    font-weight: 400;
+
+  }
+
+  label {
+    font-size: 16px;
+    font-weight: thin;
+    color: rgba(66, 69, 81, 1);
+  }
+
+  

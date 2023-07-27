@@ -2,6 +2,7 @@ import React from 'react'
 import Complete from './Complete'
 import ItemsReview from './ItemsReview'
 import styles from './Cart.module.css'
+import Shipping from './Shipping'
 
 const Cart = () => {
   return (
