@@ -8,6 +8,7 @@
 }
 .firstImage img {
   width: 600px;
+  height: 600px;
 }
 .subBlock {
   display: flex;
@@ -170,4 +171,8 @@
 }
 .infoBlock4 {
   margin-top: 32px;
+}
+.img1 {
+  width: 150px;
+  height: 250px;
 }

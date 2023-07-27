@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { fetchCategoryCloth, fetchCloth } from "../../features/clothSlice";
 import { AppDispatch, RootState } from "../../app/store";
 import { useParams, Link } from "react-router-dom";
+import styles from './categoryCloth.module.css'
 
 function CategoryCloth() {
   const dispatch = useDispatch<AppDispatch>();
@@ -15,14 +16,14 @@ function CategoryCloth() {
   
 
   return (
-    <div>
+    <div className={styles.cart}>
       {cloth.map((item) => {
         return (
-          <div>
+          <div >
             <Link to={`/onecloth/${item._id}`}>
-              <img src={item.image} alt="" />
-              <h3>{item.name}</h3>
-              <p>{item.price}</p>
+              <img className={styles.img} src={`http://localhost:4000/${item.image[0].path}`} alt="" />
+              <p>{item.name}</p>
+              <h3>  ${item.price}</h3>
               </Link>
           </div>
         );
