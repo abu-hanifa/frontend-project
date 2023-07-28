@@ -5,6 +5,7 @@ import { fetchCategoryCloth, fetchCloth } from "../../features/clothSlice";
 import { AppDispatch, RootState } from "../../app/store";
 import { useParams, Link } from "react-router-dom";
 import styles from './categoryCloth.module.css'
+import { HeartOutlined, HeartTwoTone } from "@ant-design/icons";
 
 function CategoryCloth() {
   const dispatch = useDispatch<AppDispatch>();
@@ -19,7 +20,10 @@ function CategoryCloth() {
     <div className={styles.cart}>
       {cloth.map((item) => {
         return (
-          <div >
+          <div className={styles.logo} >
+            <div className={styles.log}>
+            <HeartTwoTone className={styles.love} twoToneColor="#fc0303"  />
+            </div>
             <Link to={`/onecloth/${item._id}`}>
               <img className={styles.img} src={`http://localhost:4000/${item.image[0].path}`} alt="" />
               <p>{item.name}</p>
