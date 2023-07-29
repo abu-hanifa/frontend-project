@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../app/store";
 
 const initialState = {
-  clothes: [],
+  clothes: {},
   status: false,
 };
 
@@ -35,8 +35,6 @@ export const addFavorite = createAsyncThunk<
   { state: RootState }
 >("favorite/fetchAddFavorite", async (id, thunkAPI) => {
   try {
-    console.log(id);
-
     const res = await fetch(`http://localhost:4000/favorites/${id}`, {
       method: "PATCH",
       headers: {
@@ -46,7 +44,30 @@ export const addFavorite = createAsyncThunk<
     });
 
     const json = await res.json();
-    console.log(json);
+    if (json.error) {
+      return thunkAPI.rejectWithValue(json.error);
+    }
+    return json;
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error);
+  }
+});
+
+export const deleteFavorite = createAsyncThunk<
+  ReturnType<typeof String>,
+  any,
+  { state: RootState }
+>("favorite/fetchDeleteFavorite", async (id, thunkAPI) => {
+  try {
+    const res = await fetch(`http://localhost:4000/favorites/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${thunkAPI.getState().application.token}`,
+      },
+    });
+
+    const json = await res.json();
     if (json.error) {
       return thunkAPI.rejectWithValue(json.error);
     }
@@ -63,11 +84,11 @@ export const favoriteSlice = createSlice({
   extraReducers(builder) {
     builder
       .addCase(getUserFavorites.pending, (state) => {
-        state.clothes = [];
+        state.clothes = {};
         state.status = true;
       })
       .addCase(getUserFavorites.rejected, (state) => {
-        state.clothes = [];
+        state.clothes = {};
         state.status = false;
       })
       .addCase(getUserFavorites.fulfilled, (state, action: any) => {
@@ -81,6 +102,18 @@ export const favoriteSlice = createSlice({
         state.status = false;
       })
       .addCase(addFavorite.fulfilled, (state, action: any) => {
+        state.status = false;
+      })
+      .addCase(deleteFavorite.pending, (state) => {
+        state.status = true;
+      })
+      .addCase(deleteFavorite.rejected, (state) => {
+        state.status = false;
+      })
+      .addCase(deleteFavorite.fulfilled, (state, action) => {
+        state.clothes.cloth = state.clothes.cloth.filter(
+          (item) => item._id !== action.meta.arg
+        );
         state.status = false;
       });
   },

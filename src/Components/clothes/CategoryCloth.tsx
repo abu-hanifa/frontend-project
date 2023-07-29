@@ -5,8 +5,8 @@ import { fetchCategoryCloth, fetchCloth } from "../../features/clothSlice";
 import { AppDispatch, RootState } from "../../app/store";
 import { useParams, Link } from "react-router-dom";
 import styles from "./categoryCloth.module.css";
-import { HeartOutlined, HeartTwoTone } from "@ant-design/icons";
-import { addFavorite } from "../../features/FavoriteSlice";
+import { HeartTwoTone } from "@ant-design/icons";
+import { addFavorite } from "../../features/favoriteSlice";
 
 function CategoryCloth() {
   const dispatch = useDispatch<AppDispatch>();
@@ -18,7 +18,7 @@ function CategoryCloth() {
   }, []);
 
   const handleAddFavorite = (clothId) => {
-    dispatch(addFavorite(clothId))
+    dispatch(addFavorite(clothId));
   };
 
   return (
