@@ -9,7 +9,6 @@ import SignIn from "./Components/pages/SignIn";
 import Cart from "./Components/pages/Cart";
 import Profile from "./Components/pages/Profile";
 
-
 import "./App.css";
 
 import { RootState } from "./app/store";
@@ -17,7 +16,7 @@ import OneCloth from "./Components/pages/OneCloth";
 import Footer from "./Components/Footer";
 import AddCloth from "./Components/pages/AddCloth";
 import CategoryCloth from "./Components/clothes/CategoryCloth";
-
+import Favorite from "./Components/pages/Favorite";
 
 function App() {
   const token = useSelector((state: RootState) => state.application.token);
@@ -31,13 +30,13 @@ function App() {
             <Route path="/sign-in" element={<Navigate to="/" />} />
             <Route path="/" element={<Home />} />
 
-            <Route path="/cart" element={<Cart/>} />
-            <Route path="/add-cloth" element={<AddCloth/>}/>
-            <Route path='/oneCloth/:id' element={<OneCloth />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/add-cloth" element={<AddCloth />} />
+            <Route path="/oneCloth/:id" element={<OneCloth />} />
             <Route path="/profile" element={<Profile />} />
-            <Route path="/cloths/:id" element={<CategoryCloth/>}/>
-            <Route path="/onecloth/:id" element={<OneCloth/>}/>
-            
+            <Route path="/cloths/:id" element={<CategoryCloth />} />
+            <Route path="/onecloth/:id" element={<OneCloth />} />
+            <Route path="/favorites" element={<Favorite />} />
           </>
         ) : (
           <>
@@ -45,17 +44,16 @@ function App() {
             <Route path="/sign-in" element={<SignIn />} />
             <Route path="/profile" element={<Navigate to="/" />} />
             <Route path="/" element={<Home />} />
-            <Route path='/oneCloth/:id' element={<OneCloth />} />
-            <Route path="/cart" element={<Cart/>} />
-            <Route path="/add-cloth" element={<Navigate to="/" />}/>
-            <Route path="/cloths/:id" element={<CategoryCloth/>}/>
-            <Route path="/onecloth/:id" element={<OneCloth/>}/>
-            
-
+            <Route path="/oneCloth/:id" element={<OneCloth />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/add-cloth" element={<Navigate to="/" />} />
+            <Route path="/cloths/:id" element={<CategoryCloth />} />
+            <Route path="/onecloth/:id" element={<OneCloth />} />
+            <Route path="/favorites" element={<Navigate to="/" />} />
           </>
         )}
       </Routes>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

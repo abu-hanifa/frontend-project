@@ -46,9 +46,9 @@ export default function OneCloth() {
             
             <img className={styles.img} src={`http://localhost:4000/${cloth.image[0].path}`} alt="1" />
           </div>
-          <img className={styles.img1} src={`http://localhost:4000/${cloth.image[1].path}`} alt="2" />
+          {/* <img className={styles.img1} src={`http://localhost:4000/${cloth.image[1].path}`} alt="2" />
           <img className={styles.img1} src={`http://localhost:4000/${cloth.image[2].path}`} alt="3" />
-          <img className={styles.img1} src={`http://localhost:4000/${cloth.image[3].path}`} alt="4" />
+          <img className={styles.img1} src={`http://localhost:4000/${cloth.image[3].path}`} alt="4" /> */}
         
         </div>
         <div className={styles.clothInfo}>
