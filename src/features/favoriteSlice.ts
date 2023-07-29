@@ -35,8 +35,6 @@ export const addFavorite = createAsyncThunk<
   { state: RootState }
 >("favorite/fetchAddFavorite", async (id, thunkAPI) => {
   try {
-    console.log(id);
-
     const res = await fetch(`http://localhost:4000/favorites/${id}`, {
       method: "PATCH",
       headers: {
@@ -44,9 +42,7 @@ export const addFavorite = createAsyncThunk<
         Authorization: `Bearer ${thunkAPI.getState().application.token}`,
       },
     });
-
     const json = await res.json();
-    console.log(json);
     if (json.error) {
       return thunkAPI.rejectWithValue(json.error);
     }
