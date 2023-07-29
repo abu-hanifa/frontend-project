@@ -6,6 +6,7 @@ import { AppDispatch, RootState } from "../../app/store";
 import { useParams, Link } from "react-router-dom";
 import styles from "./categoryCloth.module.css";
 import { HeartTwoTone } from "@ant-design/icons";
+import { addFavorite } from "../../features/favoriteSlice";
 
 function CategoryCloth() {
   const dispatch = useDispatch<AppDispatch>();
@@ -16,13 +17,21 @@ function CategoryCloth() {
     dispatch(fetchCategoryCloth(id));
   }, []);
 
+  const handleAddFavorite = (clothId) => {
+    dispatch(addFavorite(clothId));
+  };
+
   return (
     <div className={styles.cart}>
       {cloth.map((item) => {
         return (
           <div className={styles.logo}>
             <div className={styles.log}>
-              <HeartTwoTone className={styles.love} twoToneColor="#fc0303" />
+              <HeartTwoTone
+                onClick={() => handleAddFavorite(item._id)}
+                className={styles.love}
+                twoToneColor="#fc0303"
+              />
             </div>
             <Link to={`/onecloth/${item._id}`}>
               <img

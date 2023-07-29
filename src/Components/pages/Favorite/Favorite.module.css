@@ -18,4 +18,9 @@
   .logo {
     position: relative;
   }
-  
+  .noCloth{
+    font-size: 32px;
+    color: gray;
+    text-align: center;
+    padding: 200px 0;
+  }
