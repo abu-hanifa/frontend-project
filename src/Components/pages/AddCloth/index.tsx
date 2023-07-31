@@ -38,7 +38,8 @@ const AddCloth = () => {
     setAddCloth(true);
     return setTimeout(() => {
       setAddCloth(false);
-    }, 3000);
+      window.location.reload();
+    }, 2000);
   };
   if (addCloth) {
     return <span className={styles.adding}>Товар добавлен</span>;
