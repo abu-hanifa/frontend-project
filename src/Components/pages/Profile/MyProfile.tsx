@@ -3,7 +3,7 @@ import styles from './Profile.module.css';
 import deleteIcon from '../../../assets/SvgIcons/delete.svg';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../../app/store';
-import { getUser } from '../../../features/userSlice';
+import { getUser, updateUser } from '../../../features/userSlice';
 import Eye from '../../../assets/SvgIcons/Eye.svg'
 
 
@@ -17,27 +17,91 @@ const MyProfile = () => {
   const [valuePassword, setvaluePassword] = useState()
   const [passwordsMatch, setPasswordsMatch] = useState(true);
 
+  const [name, setName] = useState(user.name);
+  const [subName, setSubName] = useState(user.subName);
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState(user.email);
+  const [phone, setPhone] = useState(user.phone);
+  const [country, setCountry] = useState(user.country);
+  const [city, setCity] = useState(user.city);
+  const [address, setAddress] = useState(user.address)
+  const [zipCode, setZipCode] = useState(user.zipCode);
+
+
   useEffect(() => {
     dispatch(getUser())
   }, [])
 
-  const handleFormChange = (e) => {
-    e.preventDefault();
 
-  }
+  useEffect(() => {
+    setName(user.name)
+    setSubName(user.subName)
+    setEmail(user.email)
+    setPhone(user.phone)
+    setCountry(user.country)
+    setCity(user.city)
+    setAddress(user.address)
+    setZipCode(user.zipCode)
+
+
+
+
+  }, [user])
+
+
+  // const handleFormChange = (e) => {
+  //   e.preventDefault();
+
+  // }
   const handleFormSubmit = (e) => {
     e.preventDefault();
     if (valuePassword !== valuePasswordConfirm) {
       setPasswordsMatch(false);
-      set
+
     } else {
-      //здесь будет логика для отправки формы
+      dispatch(updateUser({
+        name,
+        subName,
+        phone,
+        address,
+        email,
+        password,
+        country,
+        city,
+        zipCode
+      }))
       setPasswordsMatch(true);
     }
   }
 
+  const handleName = (e) => {
+    setName(e.target.value)
+  }
+  const handleSubName = (e) => {
+    setSubName(e.target.value)
+  }
+  const handleEmail = (e) => {
+    setEmail(e.target.value)
+  }
+  const handlePhone = (e) => {
+    setPhone(e.target.email)
+  }
+  const handleCountry = (e) => {
+    setCountry(e.target.value)
+  }
+  const handleCity = (e) => {
+    setCity(e.target.value)
+  }
+  const handleAddress = (e) => {
+    setAddress(e.target.value)
+  }
+  const handleZipCOde = (e) => {
+    setZipCode(e.target.value)
+  }
+
   const handlePasswordChange = (e) => {
-    setvaluePassword(e.target.value)
+    setvaluePassword(e.target.value);
+    setPassword(e.target.value);
   }
 
   const handleConfirmPasswordChange = (event) => {
@@ -53,13 +117,14 @@ const MyProfile = () => {
           <button> <img src={deleteIcon} alt="delete" />Delete account</button>
         </div>
       </div>
-      <form className={styles.profileForm} onSubmit={handleFormChange}>
+      <form className={styles.profileForm}>
         <div className={styles.formGroup}>
           <div><label htmlFor="first-name">First Name</label></div>
           <input type="text"
             id="first-name"
             name="first-name"
-            value={user.name}
+            value={name}
+            onChange={handleName}
             required />
         </div>
 
@@ -68,7 +133,8 @@ const MyProfile = () => {
           <input type="text"
             id="last-name"
             name="last-name"
-            value={user.subName}
+            value={subName}
+            onChange={handleSubName}
             required />
         </div>
 
@@ -77,8 +143,9 @@ const MyProfile = () => {
           <input type="email"
             id="email"
             name="email"
+            value={email}
+            onChange={handleEmail}
             required
-            value={user.email}
           />
         </div>
 
@@ -87,7 +154,8 @@ const MyProfile = () => {
           <input type="tel"
             id="phone"
             name="phone"
-            value={user.phone}
+            value={phone}
+            onChange={handlePhone}
           />
         </div>
 
@@ -137,22 +205,42 @@ const MyProfile = () => {
 
         <div className={styles.formGroup}>
           <div><label htmlFor="country">Country</label></div>
-          <input type="text" id="country" name="country" />
+          <input type="text"
+            id="country"
+            name="country"
+            value={country}
+            onChange={handleCountry}
+          />
         </div>
 
         <div className={styles.formGroup}>
           <div><label htmlFor="city">City</label></div>
-          <input type="text" id="city" name="city" />
+          <input type="text"
+            id="city"
+            name="city"
+            value={city}
+            onChange={handleCity}
+          />
         </div>
 
         <div className={styles.formGroup}>
           <div><label htmlFor="address">Address</label></div>
-          <input id="address" name="address"></input>
+          <input type="text"
+            id="address"
+            name="address"
+            value={address}
+            onChange={handleAddress}
+          />
         </div>
 
         <div className={styles.formGroup}>
           <div><label htmlFor="zip-code">ZIP Code</label></div>
-          <input type="text" id="zip-code" name="zip-code" />
+          <input type="text"
+            id="zip-code"
+            name="zip-code"
+            value={zipCode}
+            onChange={handleZipCOde}
+          />
         </div>
         <button onClick={handleFormSubmit} className={styles.saveBtn}>Save changes</button>
       </form>
