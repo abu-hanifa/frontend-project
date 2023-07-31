@@ -1,5 +1,6 @@
-.Wrapper{
-    position: relative;
+.Wrapper {
+  position: relative;
+  text-align: center;
 }
 .categoryPopUp {
   position: absolute;
@@ -7,7 +8,76 @@
   width: 200px;
   height: 200px;
   background-color: white;
+  left: 50%;
 }
-.addButton{
-    margin-left: 500px;
+.addButton {
+  display: flex;
+  border: 1px solid black;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 10px;
+  width: 200px;
+  cursor: pointer;
+}
+.addButtonBlock{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.labelInpunts {
+  display: flex;
+  width: 350px;
+  justify-content: space-between;
+}
+.title {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+.main {
+  text-align: center;
+  text-align: -webkit-center;
+}
+.main input {
+  width: 200px;
+  height: 30px;
+}
+.flexBlock {
+  display: flex;
+  justify-content: center;
+}
+.activeCategory {
+  border: 1px solid rgba(65, 65, 65, 0.193);
+  display: flex;
+  border-radius: 5px;
+  height: 30px;
+  padding: 0 15px;
+  justify-content: center;
+  align-items: center;
+}
+.categoryText {
+  font-size: 18px;
+  margin-right: 10px;
+}
+.fileInput {
+  display: none;
+}
+.photoInput {
+  display: block;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  width: 200px;
+  cursor: pointer;
+}
+.photoBlock {
+  display: flex;
+  margin-top: 10px;
+  justify-content: center;
+}
+.adding{
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  padding: 200px;
+  color: rgb(105, 95, 95);
 }
