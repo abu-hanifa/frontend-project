@@ -6,7 +6,9 @@ import Heart from "../../../assets/SvgIcons/outline.svg";
 import Paypal from "../../../assets/SvgIcons/paypal.svg";
 import imgMin from "../../../assets/image/imageMin.png";
 import Shipping from "./Shipping";
+
 const ItemsReview = () => {
+
   return (
     <>
       <div className={styles.itContainer}>
