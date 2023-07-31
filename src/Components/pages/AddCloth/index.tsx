@@ -22,7 +22,7 @@ const AddCloth = () => {
   ]);
   const [image, setImage] = useState("");
   const [popUp, setPopUp] = useState(false);
-
+  const [addCloth, setAddCloth] = useState(false);
   const categoryName = categories.find((item) => item._id === category);
 
   useEffect(() => {
@@ -35,41 +35,65 @@ const AddCloth = () => {
   };
   const handleAddCloth = () => {
     dispatch(createCloth({ name, description, price, category, size, image }));
+    setAddCloth(true);
+    return setTimeout(() => {
+      setAddCloth(false);
+    }, 3000);
   };
+  if (addCloth) {
+    return <span className={styles.adding}>Товар добавлен</span>;
+  }
   return (
     <div className={styles.Wrapper}>
-      <label>
-        Название:
-        <input value={name} onChange={(e) => setName(e.target.value)} />
-      </label>
-      <label>
-        Описание:
-        <input
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-      </label>
-      <label>
-        Цена:
-        <input
-          value={price}
-          onChange={(e) => setPrice(Number(e.target.value))}
-        />
-      </label>
-      {popUp ? (
-        <div className={styles.categoryPopUp}>
-          {categories.map((item) => (
-            <div key={item._id} onClick={() => categoryPopUp(item._id)}>
-              {item.name}
-            </div>
-          ))}
+      <div className={styles.title}>Добавление товара</div>
+      <div className={styles.main}>
+        <div>
+          <label className={styles.labelInpunts}>
+            Название товара:
+            <input value={name} onChange={(e) => setName(e.target.value)} />
+          </label>
         </div>
+        <div>
+          <label className={styles.labelInpunts}>
+            Описание товара:
+            <input
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
+          </label>
+        </div>
+        <div>
+          <label className={styles.labelInpunts}>
+            Цена:
+            <input
+              value={price}
+              onChange={(e) => setPrice(Number(e.target.value))}
+            />
+          </label>
+        </div>
+      </div>
+      {popUp ? (
+        <>
+          <span className={styles.categoryText}>Выбрать категорию:</span>
+          <div className={styles.categoryPopUp}>
+            {categories.map((item) => (
+              <div key={item._id} onClick={() => categoryPopUp(item._id)}>
+                {item.name}
+              </div>
+            ))}
+          </div>
+        </>
       ) : (
         <div>
           {categories[0] ? (
-            <div onClick={() => setPopUp(true)}>
-              Выбрать категорию:
-              {categoryName.name && categoryName.name}
+            <div className={styles.flexBlock}>
+              <span className={styles.categoryText}>Выбрать категорию:</span>
+              <div
+                onClick={() => setPopUp(true)}
+                className={styles.activeCategory}
+              >
+                {categoryName.name && categoryName.name}
+              </div>
             </div>
           ) : (
             "Loading"
@@ -78,6 +102,7 @@ const AddCloth = () => {
       )}
       <div>
         <input
+          className={styles.fileInput}
           name="file"
           id="file"
           onChange={(e) => setImage(e.target.files)}
@@ -85,9 +110,16 @@ const AddCloth = () => {
           multiple
         />
       </div>
-      <button className={styles.addButton} onClick={handleAddCloth}>
-        Добавить одежду
-      </button>
+      <div className={styles.photoBlock}>
+        <label className={styles.photoInput} htmlFor="file">
+          <span>Выбрать изображение</span>
+        </label>
+      </div>
+      <div className={styles.addButtonBlock}>
+        <button className={styles.addButton} onClick={handleAddCloth}>
+          Добавить одежду
+        </button>
+      </div>
     </div>
   );
 };
