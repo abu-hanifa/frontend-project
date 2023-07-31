@@ -19,10 +19,12 @@ const UserSideBar = () => {
 
   const handleExit = (e) => {
     e.preventDefault()
-
-    localStorage.removeItem('token')
-    location.reload()
-    navigate('/')
+    const exitquestion=window.confirm('Вы точно хотите выйти?')
+    if(exitquestion) {
+      localStorage.removeItem('token');
+      location.reload();
+      navigate('/');
+    }
   }
 
 
@@ -78,9 +80,9 @@ const UserSideBar = () => {
         </div>
         <hr className={styles.divider} />
         <div className={styles.MyProfile}>
-          <Link to="/my-profile">
+          <Link onClick={handleExit}  to="/my-profile">
             <img className={styles.imgProfile} src={logout} alt="profile" />
-            <span onClick={handleExit} className={styles.text}>Выход</span>
+            <span className={styles.text}>Выход</span>
           </Link>
         </div>
 
