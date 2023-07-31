@@ -71,7 +71,7 @@
 }
 
 
-hr {
+.mainSumm hr {
     background-color: rgba(208, 208, 208, 0.734);
     height: 1px;
     width: 390px;

@@ -38,9 +38,6 @@
   text-align: center;
 }
 
-.popularCat img {
-  width: 100px;
-}
 .category {
   display: flex;
   justify-content: center;
@@ -48,4 +45,10 @@
 
 .category div {
   padding: 10px;
+}
+
+.imgDiv img{
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
 }

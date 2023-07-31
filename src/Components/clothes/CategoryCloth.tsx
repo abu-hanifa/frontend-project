@@ -6,7 +6,7 @@ import { AppDispatch, RootState } from "../../app/store";
 import { useParams, Link } from "react-router-dom";
 import styles from "./categoryCloth.module.css";
 import { HeartTwoTone } from "@ant-design/icons";
-import { addFavorite } from "../../features/favoriteSlice";
+import { addFavorite, getUserFavorites } from "../../features/favoriteSlice";
 
 function CategoryCloth() {
   const dispatch = useDispatch<AppDispatch>();
@@ -19,6 +19,7 @@ function CategoryCloth() {
 
   const handleAddFavorite = (clothId) => {
     dispatch(addFavorite(clothId));
+    dispatch(getUserFavorites());
   };
 
   return (
