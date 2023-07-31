@@ -69,6 +69,31 @@ export const updateUser = createAsyncThunk<
   }
 });
 
+export const deleteUser = createAsyncThunk<
+  ReturnType<typeof String>,
+  any,
+  { state: RootState }
+>("users/delete", async (_, thunkAPI) => {
+  try {
+    const res = await fetch(`http://localhost:4000/user/delete`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${thunkAPI.getState().application.token}`,
+      },
+    });
+    const json = await res.json();
+    if (json.error) {
+      return thunkAPI.rejectWithValue(json.error);
+    }
+    return json;
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error);
+  }
+});
+
+
+
 export const userSlice = createSlice({
   name: "user",
   initialState,
@@ -91,6 +116,11 @@ export const userSlice = createSlice({
       // изменение данных
       .addCase(updateUser.fulfilled, (state, action) => {
         state.user = action.payload;
+        state.status = false;
+      })
+
+      .addCase(deleteUser.fulfilled, (state, action) => {
+        state.user = action.payload
         state.status = false;
       })
 
