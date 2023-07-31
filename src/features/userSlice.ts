@@ -12,7 +12,7 @@ export const getUser = createAsyncThunk<
   { state: RootState }
 >("users/fetchUserById", async (_, thunkAPI) => {
   try {
-    const res = await fetch("http://localhost:4000/auth/me", {
+    const res = await fetch("http://localhost:4000/user", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
