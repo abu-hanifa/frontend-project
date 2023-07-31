@@ -1,42 +1,36 @@
 import React, { useEffect } from "react";
 import styles from "./OneCloth.module.css";
-import imageHoodi from "../../../assets/image/image1.jpg";
-import sizeChart from "../../../assets/image/sizeChart.jpg";
-import sizess from '../../../assets/image/tablesize.png'
+import sizess from "../../../assets/image/tablesize.png";
 import hanger from "../../../assets/SvgIcons/hanger.svg";
 import { useState } from "react";
-import Item from "antd/es/list/Item";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCloth, getOneCloth } from "../../../features/clothSlice";
+import { getOneCloth } from "../../../features/clothSlice";
 import { useParams } from "react-router-dom";
 
 export default function OneCloth() {
-  const dispatch = useDispatch()
-  const cloth = useSelector(state => state.cloth.oneCloth)
+  const dispatch = useDispatch();
+  const cloth = useSelector((state) => state.cloth.oneCloth);
   const [sizesImage, setSizesImage] = useState(false);
-  const [img, setImg] = useState()
+  const [img, setImg] = useState();
   // console.log(cloth.image);
-  const { id } = useParams()
+  const { id } = useParams();
 
   useEffect(() => {
-    dispatch(getOneCloth(id))
-  }, [])
-
+    dispatch(getOneCloth(id));
+  }, []);
 
   function handleOpen() {
     setSizesImage(!sizesImage);
   }
 
-  function handleAddCloth () {
-    
-  }
-  function handleImage (path) {
-    setImg(path)
-  }
+  function handleAddCloth() {}
 
+  function handleImage(path) {
+    setImg(path);
+  }
 
   if (!cloth.name) {
-    return <div>loading</div>
+    return <div>loading</div>;
   }
   return (
     <div className={styles.oneClothBack}>
@@ -48,48 +42,57 @@ export default function OneCloth() {
       <div className={styles.subBlock}>
         <div className={styles.imagesBlock}>
           <div className={styles.images}>
-            {cloth.image.map(item => {
-              return <img
-                key={item.filename}
-                onMouseEnter={() => handleImage(item.path)}
-                src={`http://localhost:4000/${item.path}`}
-                alt="" />
+            {cloth.image.map((item) => {
+              return (
+                <img
+                  key={item.filename}
+                  onMouseEnter={() => handleImage(item.path)}
+                  src={`http://localhost:4000/${item.path}`}
+                  alt=""
+                />
+              );
             })}
           </div>
           <div className={styles.mainImage}>
             <img
-              src={`http://localhost:4000/${!img ? cloth.image[0].path: img}`}
-              alt="" />
+              src={`http://localhost:4000/${!img ? cloth.image[0].path : img}`}
+              alt=""
+            />
           </div>
-
 
           {/* <img className={styles.img1} src={`http://localhost:4000/${cloth.image[1].path}`} alt="2" />
           <img className={styles.img1} src={`http://localhost:4000/${cloth.image[2].path}`} alt="3" />
           <img className={styles.img1} src={`http://localhost:4000/${cloth.image[3].path}`} alt="4" /> */}
-        
-
         </div>
         <div className={styles.clothInfo}>
           <div className={styles.infoBlock1}>
-            <div className={styles.discountPrice}>{cloth.price - (cloth.price / 100) * cloth.discount}₽</div>
-            {cloth.discount > 0 && <div className={styles.price}>{cloth.price}</div>}
+            <div className={styles.discountPrice}>
+              {cloth.price - (cloth.price / 100) * cloth.discount}₽
+            </div>
+            {cloth.discount > 0 && (
+              <div className={styles.price}>{cloth.price}</div>
+            )}
             {/* <div className={styles.price}>{cloth.price}</div> */}
-            {cloth.discount > 0 && <div className={styles.discount}>-{cloth.discount}%</div>}
+            {cloth.discount > 0 && (
+              <div className={styles.discount}>-{cloth.discount}%</div>
+            )}
             {/* <div className={styles.discount}>-{cloth.discount}%</div> */}
           </div>
           <div className={styles.infoBlock2}>
             <div>Размер</div>
             <div className={styles.sizes}>
-              {cloth.size.map(item => {
+              {cloth.size.map((item) => {
                 return (
                   <div
                     key={item._id}
-                    className={item.inStock ? styles.sizeButton : styles.sizeButtonNo}
+                    className={
+                      item.inStock ? styles.sizeButton : styles.sizeButtonNo
+                    }
                     disabled={item.inStock ? true : false}
                   >
                     {item.size}
                   </div>
-                )
+                );
               })}
               <div onClick={handleOpen} className={styles.sizeChart}>
                 <img src={hanger} alt="hanger" />
@@ -106,23 +109,29 @@ export default function OneCloth() {
             <div onClick={handleAddCloth} className={styles.addingCart}>
               Добавить в корзину
             </div>
-            <div className={styles.addFavorite}>
-              В избранное
-            </div>
+            <div className={styles.addFavorite}>В избранное</div>
           </div>
           <div className={styles.infoBlock4}>
-            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ad et modi distinctio autem quae, quisquam placeat eligendi accusantium, cumque magni esse dicta suscipit id labore ipsam aut optio repellat.</div>
+            <div>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ad
+              et modi distinctio autem quae, quisquam placeat eligendi
+              accusantium, cumque magni esse dicta suscipit id labore ipsam aut
+              optio repellat.
+            </div>
             <div>
               <h3>Возврат</h3>
-              <div>У вас есть <b>60 дней</b>, чтобы вернуть товар</div>
+              <div>
+                У вас есть <b>60 дней</b>, чтобы вернуть товар
+              </div>
             </div>
           </div>
-          <div className={sizesImage ? styles.sizesImageYes : styles.sizesImageNo}>
-            <img
-              src={sizess}
-              alt="sizeChart"
-            />
-            <button  onClick={handleOpen} className={styles.offButton}>X</button>
+          <div
+            className={sizesImage ? styles.sizesImageYes : styles.sizesImageNo}
+          >
+            <img src={sizess} alt="sizeChart" />
+            <button onClick={handleOpen} className={styles.offButton}>
+              X
+            </button>
           </div>
         </div>
       </div>

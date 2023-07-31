@@ -18,7 +18,6 @@ const Favorite = () => {
   const handleDeleteFavorite = (clothId) => {
     dispatch(deleteFavorite(clothId));
   };
-console.log(cloth);
 
   if (status) {
     return <div className={styles.noCloth}>Loading</div>;
