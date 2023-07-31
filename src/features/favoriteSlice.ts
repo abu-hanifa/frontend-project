@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../app/store";
 
 const initialState = {
-  clothes: {},
+  clothes: [],
   status: false,
 };
 
