@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Header.module.css";
 import Person from "../../assets/SvgIcons/Person.svg";
 import heart from "../../assets/SvgIcons/outline.svg";
@@ -8,17 +8,24 @@ import moon from "../../assets/image/moon4.png";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Category from "../Category/Category";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../app/store";
+import { getUserFavorites } from "../../features/FavoriteSlice";
 
 export default function Header() {
-  const [favoritesIndic, setFavoritesIndic] = useState(2);
-  const [cartIndic, setCartIndic] = useState(4);
   const [theme, setTheme] = useState(true);
   const [popUp, setPopUp] = useState(false);
   const [popUp1, setPopUp1] = useState(false);
-  const loading = useSelector((state) => state.category.loading);
+  const loading = useSelector((state: RootState) => state.category.loading);
   const token = useSelector((state: RootState) => state.application.token);
+  const dispatch = useDispatch();
+  const favoriteClothes = useSelector(
+    (state: RootState) => state.favorite.clothes
+  );
+  useEffect(() => {
+    dispatch(getUserFavorites());
+  }, []);
+
   function handleMan() {
     setPopUp(!popUp);
     setPopUp1(false);
@@ -30,6 +37,10 @@ export default function Header() {
   function handleTheme() {
     setTheme(!theme);
   }
+  const favoriteCount = favoriteClothes.cloth
+    ? favoriteClothes.cloth.length
+    : "";
+
   return (
     <>
       <div className={styles.header}>
@@ -73,13 +84,19 @@ export default function Header() {
           </div>
         </div>
 
-        <div className={styles.whiteLine}>
+        <div
+          className={styles.whiteLine}
+          style={
+            token
+              ? { justifyContent: "space-between" }
+              : { justifyContent: "space-evenly" }
+          }
+        >
           <Link to="/">
             <span className={styles.logo}>B O O M Z I</span>
           </Link>
           <ul className={styles.categoriesBar}>
             <button disabled={loading} onClick={handleMan}>
-              {" "}
               Категории
             </button>
             <input
@@ -89,20 +106,25 @@ export default function Header() {
             />
             {/* <button disabled={loading} onClick={handleWomen}>Для женщин</button> */}
           </ul>
-          <div className={styles.iconsBar}>
-            <Link to="/favorites" className={styles.favoritesBar}>
-              <img src={heart} alt="heart" />
-              <div className={styles.favoritesIndic}>{favoritesIndic}</div>
-            </Link>
-            <Link to="/cart" className={styles.cartBar}>
-              <img src={cart} alt="heart" />
-              <div className={styles.cartIndic}>{cartIndic}</div>
-            </Link>
-          </div>
+          {token ? (
+            <div className={styles.iconsBar}>
+              <Link to="/favorites" className={styles.favoritesBar}>
+                <img src={heart} alt="heart" />
+                <div className={styles.favoritesIndic}>
+                  {favoriteCount === 0 ? "" : favoriteCount}
+                </div>
+              </Link>
+              <Link to="/cart" className={styles.cartBar}>
+                <img src={cart} alt="heart" />
+                <div className={styles.cartIndic}>222</div>
+              </Link>
+            </div>
+          ) : (
+            ""
+          )}
         </div>
       </div>
       {popUp ? <Category popUp={setPopUp} /> : ""}
-     
     </>
   );
 }
