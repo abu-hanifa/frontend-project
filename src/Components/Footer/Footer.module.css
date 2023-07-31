@@ -27,3 +27,6 @@
 .grayText {
   color: #a5a6ab !important;
 }
+.goToTop{
+  cursor: pointer;
+}
