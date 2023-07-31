@@ -12,9 +12,10 @@ import { useParams } from "react-router-dom";
 
 export default function OneCloth() {
   const dispatch = useDispatch()
-  const [sizesImage, setSizesImage] = useState(false);
   const cloth = useSelector(state => state.cloth.oneCloth)
-  // console.log(cloth);
+  const [sizesImage, setSizesImage] = useState(false);
+  const [img, setImg] = useState()
+  // console.log(cloth.image);
   const { id } = useParams()
 
   useEffect(() => {
@@ -25,8 +26,12 @@ export default function OneCloth() {
   function handleOpen() {
     setSizesImage(!sizesImage);
   }
+
   function handleAddCloth () {
     
+  }
+  function handleImage (path) {
+    setImg(path)
   }
 
 
@@ -41,15 +46,21 @@ export default function OneCloth() {
         </div>
       </div>
       <div className={styles.subBlock}>
-        <div className={styles.images}>
-          <div className={styles.firstImage}>
-            
-            <img className={styles.img} src={`http://localhost:4000/${cloth.image[0].path}`} alt="1" />
+        <div className={styles.imagesBlock}>
+          <div className={styles.images}>
+            {cloth.image.map(item => {
+              return <img
+                key={item.filename}
+                onMouseEnter={() => handleImage(item.path)}
+                src={`http://localhost:4000/${item.path}`}
+                alt="" />
+            })}
           </div>
-          <img className={styles.img1} src={`http://localhost:4000/${cloth.image[1].path}`} alt="2" />
-          <img className={styles.img1} src={`http://localhost:4000/${cloth.image[2].path}`} alt="3" />
-          <img className={styles.img1} src={`http://localhost:4000/${cloth.image[3].path}`} alt="4" />
-        
+          <div className={styles.mainImage}>
+            <img
+              src={`http://localhost:4000/${!img ? cloth.image[0].path: img}`}
+              alt="" />
+          </div>
         </div>
         <div className={styles.clothInfo}>
           <div className={styles.infoBlock1}>
@@ -63,7 +74,6 @@ export default function OneCloth() {
             <div>Размер</div>
             <div className={styles.sizes}>
               {cloth.size.map(item => {
-                console.log(item);
                 return (
                   <div
                     key={item._id}
