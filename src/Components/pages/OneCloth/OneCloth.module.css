@@ -2,12 +2,23 @@
   margin: 0 100px;
 }
 .images {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
 }
 .images img {
-  width: 200px;
+  width: 70px;
 }
-.firstImage img {
-  width: 600px;
+.images img:hover {
+  border: 1px solid black;
+  scale: 1;
+}
+.imagesBlock {
+  display: flex;
+  gap: 10px;
+}
+.mainImage img {
+  /* width: 600px; */
   height: 600px;
 }
 .subBlock {
