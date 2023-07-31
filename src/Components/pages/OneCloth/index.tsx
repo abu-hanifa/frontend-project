@@ -6,14 +6,18 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getOneCloth } from "../../../features/clothSlice";
 import { useParams } from "react-router-dom";
+import { addClothInCart } from "../../../features/cartSlice";
 
 export default function OneCloth() {
   const dispatch = useDispatch();
   const cloth = useSelector((state) => state.cloth.oneCloth);
   const [sizesImage, setSizesImage] = useState(false);
-  const [img, setImg] = useState();
-  // console.log(cloth.image);
-  const { id } = useParams();
+
+  const [img, setImg] = useState()
+  const [mySize, setMySize] = useState()
+  // console.log(mySize);
+  const { id } = useParams()
+
 
   useEffect(() => {
     dispatch(getOneCloth(id));
@@ -23,7 +27,16 @@ export default function OneCloth() {
     setSizesImage(!sizesImage);
   }
 
-  function handleAddCloth() {}
+  function handleChangeSize (size) {
+    setMySize(size)
+  }
+  function handleAddCloth () {
+    dispatch(addClothInCart({id, mySize}))
+  }
+  function handleImage (path) {
+    setImg(path)
+  }
+
 
   function handleImage(path) {
     setImg(path);
@@ -55,14 +68,12 @@ export default function OneCloth() {
           </div>
           <div className={styles.mainImage}>
             <img
-              src={`http://localhost:4000/${!img ? cloth.image[0].path : img}`}
-              alt=""
-            />
-          </div>
 
-          {/* <img className={styles.img1} src={`http://localhost:4000/${cloth.image[1].path}`} alt="2" />
-          <img className={styles.img1} src={`http://localhost:4000/${cloth.image[2].path}`} alt="3" />
-          <img className={styles.img1} src={`http://localhost:4000/${cloth.image[3].path}`} alt="4" /> */}
+              src={`http://localhost:4000/${!img ? cloth.image[0].path: img}`}
+              alt="" />
+          </div>        
+
+
         </div>
         <div className={styles.clothInfo}>
           <div className={styles.infoBlock1}>
@@ -83,16 +94,17 @@ export default function OneCloth() {
             <div className={styles.sizes}>
               {cloth.size.map((item) => {
                 return (
-                  <div
+                  <button
+                    onClick={() => handleChangeSize(item.size)}
                     key={item._id}
-                    className={
-                      item.inStock ? styles.sizeButton : styles.sizeButtonNo
-                    }
-                    disabled={item.inStock ? true : false}
+
+                    className={`${item.inStock ? styles.sizeButton : styles.sizeButtonNo} ${item.size === mySize && styles.activeSize}`}
+                    disabled={item.inStock === 0 ? true : false}
                   >
                     {item.size}
-                  </div>
-                );
+                  </button>
+                )
+
               })}
               <div onClick={handleOpen} className={styles.sizeChart}>
                 <img src={hanger} alt="hanger" />
@@ -106,10 +118,14 @@ export default function OneCloth() {
               <span>1</span>
               <button>+</button>
             </div>
-            <div onClick={handleAddCloth} className={styles.addingCart}>
+            <button onClick={handleAddCloth} className={styles.addingCart}>
               Добавить в корзину
-            </div>
-            <div className={styles.addFavorite}>В избранное</div>
+
+            </button>
+            <button className={styles.addFavorite}>
+              В избранное
+            </button>
+
           </div>
           <div className={styles.infoBlock4}>
             <div>

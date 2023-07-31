@@ -79,6 +79,8 @@
   cursor: pointer;
   font-size: 14px;
   color: #17696A;
+  background-color: white;
+  font-family: 'Lato', sans-serif;
 }
 .sizeButtonNo {
   border-radius: 4px;
@@ -88,10 +90,16 @@
   align-items: center;
   justify-content: center;
   margin-top: 12px;
-  cursor: pointer;
   font-size: 14px;
-  background-color: #c5c5c5;
+  border: none;
   color: white;
+  background-color: #c5c5c5;
+  font-family: 'Lato', sans-serif;
+
+}
+.activeSize {
+  scale: 1.1;
+  border: 2px solid #17696A;
 }
 .sizeChart {
   cursor: pointer;
@@ -168,6 +176,10 @@
   border-radius: 4px;
   background-color: #17696A;
   color: white;
+  border: none;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
 }
 .addFavorite {
   display: flex;
@@ -179,6 +191,9 @@
   background-color: white;
   color: #17696A;
   border: 1px solid #17696A;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
 }
 .infoBlock4 {
   margin-top: 32px;
