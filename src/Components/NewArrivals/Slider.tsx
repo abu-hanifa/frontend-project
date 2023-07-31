@@ -2,9 +2,11 @@ import React from "react";
 import styles from "./NewArrivals.module.css";
 import { Carousel } from "antd";
 import men from "../../assets/image/men.png";
+import { useSelector } from "react-redux";
+import { RootState } from "../../app/store";
 
 const Slider = () => {
-    
+  const clothes = useSelector((state: RootState) => state.cloth.cloths);
   const contentStyle: React.CSSProperties = {
     margin: 0,
     height: "200px",
@@ -13,10 +15,11 @@ const Slider = () => {
     textAlign: "center",
     background: "#364d79",
   };
+console.log(clothes);
 
   return (
     <div className={styles.main}>
-      <span className={styles.headerText}>NewArrivals</span>
+      <span className={styles.headerText}>Новые поступления</span>
       <span className={styles.textGray}>
         Ознакомьтесь с нашими последними поступлениями в предстоящем сезоне
       </span>

@@ -3,6 +3,9 @@ import styles from "./Footer.module.css";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const scroll = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <div className={styles.Wrapper}>
       <div className={styles.subWrapper}>
@@ -36,10 +39,12 @@ const Footer = () => {
           <div className={styles.grayText}>Email: hello@gmail.com</div>
         </div>
       </div>
-      <hr/>
+      <hr />
       <div className={styles.copyright}>
         <div>2023 © All rights reserved</div>
-        <div>Go to top</div>
+        <div onClick={scroll} className={styles.goToTop}>
+          Go to top
+        </div>
       </div>
     </div>
   );

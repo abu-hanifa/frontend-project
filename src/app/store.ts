@@ -5,7 +5,7 @@ import category from "../features/categorySlice";
 import cloth from "../features/clothSlice";
 
 import cart from '../features/cartSlice'
-import favorite from "../features/FavoriteSlice";
+import favorite from "../features/favoriteSlice";
 
 export const store = configureStore({
   reducer: {
