@@ -107,7 +107,7 @@ const MyProfile = () => {
     setEmail(e.target.value)
   }
   const handlePhone = (e) => {
-    setPhone(e.target.email)
+    setPhone(e.target.value)
   }
   const handleCountry = (e) => {
     setCountry(e.target.value)
