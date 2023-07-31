@@ -6,13 +6,12 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getOneCloth } from "../../../features/clothSlice";
 import { useParams } from "react-router-dom";
-import { addClothInCart } from "../../../features/cartSlice";
+import { addClothInCart, getCart, minusClothInCart } from "../../../features/cartSlice";
 
 export default function OneCloth() {
   const dispatch = useDispatch();
   const cloth = useSelector((state) => state.cloth.oneCloth);
   const [sizesImage, setSizesImage] = useState(false);
-
   const [img, setImg] = useState()
   const [mySize, setMySize] = useState()
   // console.log(mySize);
@@ -35,11 +34,6 @@ export default function OneCloth() {
   }
   function handleImage (path) {
     setImg(path)
-  }
-
-
-  function handleImage(path) {
-    setImg(path);
   }
 
   if (!cloth.name) {
@@ -113,11 +107,6 @@ export default function OneCloth() {
             </div>
           </div>
           <div className={styles.infoBlock3}>
-            <div className={styles.counterBlock}>
-              <button>-</button>
-              <span>1</span>
-              <button>+</button>
-            </div>
             <button onClick={handleAddCloth} className={styles.addingCart}>
               Добавить в корзину
 
