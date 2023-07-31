@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Cart.module.css";
 import { Link } from "react-router-dom";
 import Person from "../../../assets/SvgIcons/Person1.svg";
@@ -6,8 +6,32 @@ import Heart from "../../../assets/SvgIcons/outline.svg";
 import Paypal from "../../../assets/SvgIcons/paypal.svg";
 import imgMin from "../../../assets/image/imageMin.png";
 import Shipping from "./Shipping";
+import { useDispatch, useSelector } from "react-redux";
+import { addClothInCart, getCart, minusClothInCart, removeClothCart } from "../../../features/cartSlice";
 
 const ItemsReview = () => {
+  const { cart } = useSelector((state) => state.cart.cart);
+  const status = useSelector((state) => state.cart.status);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getCart());
+  }, []);
+
+  const handleRemoveCloth = (id, mySize) => {
+    dispatch(removeClothCart({id, mySize}))
+  }
+  function handleAddCloth (id, mySize) {
+    dispatch(addClothInCart({id, mySize}))
+  }
+  function handleMinusCloth (id, mySize) {
+    dispatch(minusClothInCart({id, mySize}))
+  }
+
+if(status){
+  return <div>Loading</div>
+}
+console.log(cart);
 
   return (
     <>
@@ -26,38 +50,38 @@ const ItemsReview = () => {
         <div className={styles.line}></div>
         <h3>1. Товары в корзине</h3>
         <div className={styles.clothesContainer}>
-          <div className={styles.cloth}>
-            <img src={imgMin} alt="clothMin" />
-            <div className={styles.clothDescr}>
-              <div className={styles.clothName}>
-                Basic hooded sweatshirt in pink
+          {cart.map((item) => {
+            return (
+              <div key={item.cloth._id} className={styles.cloth}>
+                <img src={`http://localhost:4000/${item.cloth.image[0].path}`} alt="clothMin" />
+                <div className={styles.clothDescr}>
+                  <div className={styles.clothName}>
+                    {item.cloth.name}
+                  </div>
+                  <div className={styles.clothProp}>
+                    <p>
+                      Размер: <span>{item.size}</span>
+                    </p>
+                  </div>
+                </div>
+                <div className={styles.counterBlock}>
+                  <button onClick={() => handleMinusCloth(item.cloth._id, item.size)}>-</button>
+                  <span>{item.amount}</span>
+                  <button onClick={() => handleAddCloth(item.cloth._id, item.size)}>+</button>
+                </div>
+                <div className={styles.infoBlock1}>
+                  <div className={styles.discountPrice}>{item.cloth.price}</div>
+                </div>
+                <div className={styles.buttons}>
+                  <button onClick={() => handleRemoveCloth(item.cloth._id, item.size)} className={styles.delete}>Удалить</button>
+                  <div>
+                    <div>Добавить в</div>
+                    <img src={Heart} alt="favorite" />
+                  </div>
+                </div>
               </div>
-              <div className={styles.clothProp}>
-                <p>
-                  Цвет: <span>розовый</span>{" "}
-                </p>{" "}
-                <p>
-                  Размер: <span>S</span>
-                </p>
-              </div>
-            </div>
-            <div className={styles.counterBlock}>
-              <button>-</button>
-              <span>1</span>
-              <button>+</button>
-            </div>
-            <div className={styles.infoBlock1}>
-              <div className={styles.discountPrice}>$15.50</div>
-              <div className={styles.price}>$31.00</div>
-            </div>
-            <div className={styles.buttons}>
-              <button className={styles.delete}>Удалить</button>
-              <div>
-                <div>Добавить в</div>
-                <img src={Heart} alt="favorite" />
-              </div>
-            </div>
-          </div>
+            );
+          })}
           <div className={styles.subTotal}>Сумма покупки : 0</div>
         </div>
         <h3>2.Информация о доставке</h3>
