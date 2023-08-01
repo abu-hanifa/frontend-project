@@ -19,8 +19,23 @@
 }
 .logo {
   position: relative;
+  margin-top: 10px;
+  margin-bottom: 25px;
 }
 .WrapperCart{
   display: flex;
   justify-content: center;
+}
+.flexBlock{
+  display: flex;
+  justify-content: space-between;
+}
+.priceText{
+  font-size: 18px;
+  font-weight: 600;
+}
+.deleteText{
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
 }
