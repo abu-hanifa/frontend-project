@@ -10,33 +10,33 @@ const Footer = () => {
     <div className={styles.Wrapper}>
       <div className={styles.subWrapper}>
         <div className={styles.container}>
-          <div>Help</div>
+          <div>Помощь</div>
           <div>
-            <Link to="/delivery-and-return">Delivery & returns</Link>
+            <Link to="/delivery-and-return">Доставка и Возврат</Link>
           </div>
           <div>
             <Link to="/FAQ">FAQ</Link>
           </div>
           <div>
-            <Link to="/track-order">Track order</Link>
+            <Link to="/track-order">Трэк заказа</Link>
           </div>
           <div>
-            <Link to="/contacts">Contacts</Link>
+            <Link to="/contacts">Контакты</Link>
           </div>
         </div>
         <div className={styles.container}>
-          <div>Shop</div>
+          <div>Магазин</div>
           <div>
-            <Link to="/new-arrivals">New arrivals</Link>
+            <Link to="/new-arrivals">Новые коллекции</Link>
           </div>
           <div>
-            <Link to="/brands">Brands</Link>
+            <Link to="/brands">Бренды</Link>
           </div>
         </div>
         <div className={styles.container}>
-          <div>GET IN TOUCH</div>
-          <div className={styles.grayText}>Call: 8 800 555 35 35</div>
-          <div className={styles.grayText}>Email: hello@gmail.com</div>
+          <div>Связаться</div>
+          <div className={styles.grayText}>Номер: 8 800 555 35 35</div>
+          <div className={styles.grayText}>Почта: hello@gmail.com</div>
         </div>
       </div>
       <hr />

@@ -11,6 +11,7 @@ const Favorite = () => {
     clothes: { cloth },
     status,
   } = useSelector((state: RootState) => state.favorite);
+  
   useEffect(() => {
     dispatch(getUserFavorites());
   }, []);

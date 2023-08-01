@@ -101,8 +101,16 @@ export const favoriteSlice = createSlice({
       .addCase(addFavorite.rejected, (state) => {
         state.status = false;
       })
-      .addCase(addFavorite.fulfilled, (state, action: any) => {
+      .addCase(addFavorite.fulfilled, (state, action) => {
         state.status = false;
+        console.log(action.payload);
+        if (action.payload === "delete cloth") {
+          state.clothes.cloth = state.clothes.cloth.filter(
+            (item) => item._id !== action.meta.arg
+          );
+        } else {
+          state.clothes.cloth = [...state.clothes.cloth, action.payload];
+        }
       })
       .addCase(deleteFavorite.pending, (state) => {
         state.status = true;

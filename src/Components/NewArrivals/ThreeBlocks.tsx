@@ -8,7 +8,6 @@ const ThreeBlocks = () => {
     <div className={styles.ThreeBlock}>
       <img src={women} alt="women" />
       <img src={men} alt="men" />
-      <img src={men} alt="men" />
     </div>
   );
 };

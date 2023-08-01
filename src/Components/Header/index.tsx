@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import styles from "./Header.module.css";
 import Person from "../../assets/SvgIcons/Person.svg";
 import heart from "../../assets/SvgIcons/outline.svg";
-import cart from "../../assets/SvgIcons/Cart.svg";
+import cartICon from "../../assets/SvgIcons/Cart.svg";
 import sun from "../../assets/image/sun4.png";
 import moon from "../../assets/image/moon4.png";
 import { useState } from "react";
@@ -22,6 +22,8 @@ export default function Header() {
   const favoriteClothes = useSelector(
     (state: RootState) => state.favorite.clothes
   );
+  const { cart } = useSelector((state: RootState) => state.cart.cart);
+
   useEffect(() => {
     dispatch(getUserFavorites());
   }, []);
@@ -40,6 +42,7 @@ export default function Header() {
   const favoriteCount = favoriteClothes.cloth
     ? favoriteClothes.cloth.length
     : "";
+  const cartCount = cart ? cart.length : "";
 
   return (
     <>
@@ -115,8 +118,8 @@ export default function Header() {
                 </div>
               </Link>
               <Link to="/cart" className={styles.cartBar}>
-                <img src={cart} alt="heart" />
-                <div className={styles.cartIndic}>222</div>
+                <img src={cartICon} alt="heart" />
+                <div className={styles.cartIndic}>{cartCount}</div>
               </Link>
             </div>
           ) : (

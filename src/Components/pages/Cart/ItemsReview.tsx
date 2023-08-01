@@ -7,31 +7,37 @@ import Paypal from "../../../assets/SvgIcons/paypal.svg";
 import imgMin from "../../../assets/image/imageMin.png";
 import Shipping from "./Shipping";
 import { useDispatch, useSelector } from "react-redux";
-import { addClothInCart, getCart, minusClothInCart, removeClothCart } from "../../../features/cartSlice";
+import {
+  PlusClothInCart,
+  getCart,
+  minusClothInCart,
+  removeClothCart,
+} from "../../../features/cartSlice";
 
-const ItemsReview = () => {
-  const { cart } = useSelector((state) => state.cart.cart);
+const ItemsReview = ({total}) => {
+  const {cart} = useSelector((state) => state.cart.cart);
   const status = useSelector((state) => state.cart.status);
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(getCart());
   }, []);
 
   const handleRemoveCloth = (id, mySize) => {
-    dispatch(removeClothCart({id, mySize}))
+    dispatch(removeClothCart({ id, mySize }));
+  };
+  function handleAddCloth(id, mySize) {
+    dispatch(PlusClothInCart({ id, mySize }));
   }
-  function handleAddCloth (id, mySize) {
-    dispatch(addClothInCart({id, mySize}))
-  }
-  function handleMinusCloth (id, mySize) {
-    dispatch(minusClothInCart({id, mySize}))
+  function handleMinusCloth(id, mySize) {
+    dispatch(minusClothInCart({ id, mySize }));
   }
 
-if(status){
-  return <div>Loading</div>
-}
-console.log(cart);
+  if (status) {
+    return <div>Loading</div>;
+  }
+  if (!cart) {
+    return <div>Loading</div>;
+  }
 
   return (
     <>
@@ -82,7 +88,7 @@ console.log(cart);
               </div>
             );
           })}
-          <div className={styles.subTotal}>Сумма покупки : 0</div>
+          <div className={styles.subTotal}>Сумма покупки : {total} ₽</div>
         </div>
         <h3>2.Информация о доставке</h3>
         <div className={styles.inputContainer}>

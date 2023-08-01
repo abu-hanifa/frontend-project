@@ -15,7 +15,7 @@ const Slider = () => {
     textAlign: "center",
     background: "#364d79",
   };
-console.log(clothes);
+  console.log(clothes);
 
   return (
     <div className={styles.main}>
@@ -25,27 +25,11 @@ console.log(clothes);
       </span>
       <div className={styles.slider}>
         <Carousel autoplay slidesToShow={6}>
-          <div>
-            <img style={contentStyle} src={men} alt="men" />
-          </div>
-          <div>
-            <img style={contentStyle} src={men} alt="men" />
-          </div>
-          <div>
-            <img style={contentStyle} src={men} alt="men" />
-          </div>
-          <div>
-            <img style={contentStyle} src={men} alt="men" />
-          </div>
-          <div>
-            <img style={contentStyle} src={men} alt="men" />
-          </div>
-          <div>
-            <img style={contentStyle} src={men} alt="men" />
-          </div>
-          <div>
-            <img style={contentStyle} src={men} alt="men" />
-          </div>
+          {clothes.map((item) => (
+            <div>
+              <img style={contentStyle} src={`http://localhost:4000/${item.image[0].path}`} alt="men" />
+            </div>
+          ))}
         </Carousel>
       </div>
     </div>
