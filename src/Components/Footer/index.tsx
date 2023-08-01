@@ -21,7 +21,7 @@ const Footer = () => {
             <Link to="/track-order">Трэк заказа</Link>
           </div>
           <div>
-            <Link to="/contacts">Контакты</Link>
+            <Link to="/contact">Контакты</Link>
           </div>
         </div>
         <div className={styles.container}>

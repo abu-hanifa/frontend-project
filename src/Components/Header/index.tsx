@@ -62,11 +62,14 @@ export default function Header() {
             <div className={styles.bar2}>
               <img src={Person} alt="person" />
               {user.role && user.role === "admin" ? (
-                <Link to="/add-cloth">Добавить товар</Link>
+                <>
+                  <Link to="/add-cloth">Добавить товар</Link>
+                  <span>/</span>
+                </>
               ) : (
                 ""
               )}
-              <span>/</span>
+
               {token ? (
                 <Link to="/profile">Профиль</Link>
               ) : (
