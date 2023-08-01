@@ -20,6 +20,7 @@ export default function OneCloth() {
 
   useEffect(() => {
     dispatch(getOneCloth(id));
+    dispatch(getCart());
   }, []);
 
   function handleOpen() {

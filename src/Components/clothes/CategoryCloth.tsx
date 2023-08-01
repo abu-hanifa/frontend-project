@@ -19,7 +19,6 @@ function CategoryCloth() {
 
   const handleAddFavorite = (clothId) => {
     dispatch(addFavorite(clothId));
-    dispatch(getUserFavorites());
   };
 
   return (
