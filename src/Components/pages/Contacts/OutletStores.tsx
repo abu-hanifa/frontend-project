@@ -12,7 +12,7 @@ import navigate from "../../../assets/image/outline.png";
 
 const OutletStores = () => {
   return (
-    <div>
+    <div className={styles.glav}>
       <div className={styles.route}>
         <Link className={styles.contact} to="/contact"><h3>ContactUs</h3></Link>
         <Link className={styles.outlet} to="/contact/outlet"><h3>Outlet stores</h3></Link>

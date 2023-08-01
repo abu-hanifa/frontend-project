@@ -6,7 +6,7 @@ import plus from '../../../assets/image/Plus.png'
 
 const FAQ = () => {
   return (
-    <div>
+    <div className={styles.glav}>
       <div className={styles.link}>
         <Link className={styles.contact} to="/contact"><h3>ContactUs</h3></Link>
         <Link className={styles.outlet} to="/contact/outlet"><h3>Outlet stores</h3></Link>
