@@ -1,6 +1,8 @@
 .rod {
     display: flex;
     justify-content: center;
+    margin-left: 251px;
+    /* margin-top: 32px; */
 }
 .icon {
     display: flex;
@@ -52,6 +54,5 @@
 }
 .content {
     width: 810px;
-    position: relative;
-    top: -155px
+    
 }

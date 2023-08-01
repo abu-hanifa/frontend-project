@@ -1,6 +1,8 @@
 .rod {
     display: flex;
     justify-content: center;
+    margin-left: 251px;
+    margin-top: 32px;
 }
 .block {
     display: flex;
@@ -17,15 +19,16 @@
     margin-top: 20px;
     margin-bottom: 20px;
 }
-.content {
+/* .content {
     
     position: relative;
     top: -140px
-}
+} */
 .link {
     display: flex;
     flex-direction: column;
     margin-top: 32px;
+    margin-left: 100px;
    
 }
 .contact {
@@ -54,4 +57,8 @@
 }
 .contact h3 {
     margin: 0;
+}
+.glav {
+    display: flex;
+    
 }

@@ -1,6 +1,8 @@
 .rod {
     display: flex;
     justify-content: center;
+    margin-left: 251px;
+    margin-top: 32px;
 }
 .icon {
     display: flex;
@@ -30,15 +32,14 @@
     width: 900px;
     display: flex;
     flex-wrap: wrap;
-    margin-left: 251px;
-    position: relative;
-    top: -140px
+   
    
 }
 .route {
     display: flex;
     flex-direction: column;
     margin-top: 32px;
+    margin-left: 100px;
 }
 .contact {
     font-size: 28px;
@@ -66,4 +67,7 @@
 }
 .contact h3 {
     margin: 0;
+}
+.glav {
+    display: flex;
 }
