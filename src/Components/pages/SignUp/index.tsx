@@ -4,14 +4,13 @@ import { AppDispatch } from "../../../app/store";
 import { authSignUp } from "../../../features/applicationSlice";
 import styles from "./sign.module.css";
 import { Link } from "react-router-dom";
-import log from '../../../assets/image/idle2.png'
-import log1 from '../../../assets/image/hover.png'
-import log2 from '../../../assets/image/idle.png'
-import log3 from '../../../assets/image/idle1.png'
+import log from "../../../assets/image/idle2.png";
+import log1 from "../../../assets/image/hover.png";
+import log2 from "../../../assets/image/idle.png";
+import log3 from "../../../assets/image/idle1.png";
 
 const SignUp = () => {
   const dispatch = useDispatch<AppDispatch>();
-
   const [name, setName] = useState("");
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
@@ -25,7 +24,7 @@ const SignUp = () => {
       <div className={styles.content}>
         <h1>Зарегистрироваться</h1>
         <p>
-        Регистрация занимает меньше минуты, но дает вам полный контроль над
+          Регистрация занимает меньше минуты, но дает вам полный контроль над
           вашими заказами.
         </p>
         <label>
@@ -55,14 +54,16 @@ const SignUp = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-        <div className={styles.remember}>
-          <input type="checkbox" />
-          Запомнить меня
-        </div>
+          <div className={styles.remember}>
+            <input type="checkbox" />
+            Запомнить меня
+          </div>
         </label>
-        <button className={styles.but} onClick={fetchSignUp}>
-          Зарегистрироваться
-        </button>
+        <Link to="/sign-in">
+          <button className={styles.but} onClick={fetchSignUp}>
+            Зарегистрироваться
+          </button>
+        </Link>
         <label>
           <div className={styles.vhod}>
             Уже есть аккаунт?{" "}
@@ -78,7 +79,7 @@ const SignUp = () => {
           <img src={log1} alt="" />
           <img src={log2} alt="" />
           <img src={log3} alt="" />
-          </div>
+        </div>
       </div>
     </div>
   );
