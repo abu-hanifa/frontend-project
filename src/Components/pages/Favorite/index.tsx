@@ -41,7 +41,7 @@ const Favorite = () => {
                 alt=""
               />
               <p>{item.name}</p>
-              <h3> ${item.price}</h3>
+              <h3>{item.price} ₽</h3>
             </Link>
           </div>
         );
