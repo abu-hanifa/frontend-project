@@ -65,9 +65,6 @@ export default function Header() {
             </Link>
           </div>
           <div className={styles.profileBar}>
-            <div className={styles.bar1}>
-              Eng / $<div className={styles.subBar1}>&or;</div>
-            </div>
             <div className={styles.bar2}>
               <img src={Person} alt="person" />
               {token ? (
