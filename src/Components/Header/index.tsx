@@ -54,7 +54,7 @@ export default function Header() {
             <Link className={styles.link} to="#">
               Отслеживание заказа
             </Link>
-            <Link className={styles.link} to="#">
+            <Link className={styles.link} to="/contact">
               Контакты
             </Link>
           </div>
