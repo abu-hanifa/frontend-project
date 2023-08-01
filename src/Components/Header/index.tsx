@@ -45,7 +45,8 @@ export default function Header() {
   const favoriteCount = favoriteClothes.cloth
     ? favoriteClothes.cloth.length
     : "";
-  const cartCount = cart ? cart.length : "";
+  const cartCount = cart ? cart.length : 0;
+  
   return (
     <>
       <div className={styles.header}>
@@ -119,9 +120,12 @@ export default function Header() {
               </Link>
               <Link to="/cart" className={styles.cartBar}>
                 <img src={cartICon} alt="heart" />
-                <div className={styles.cartIndic}>
-                  {cartCount === 0 ? "" : cartCount}
-                </div>
+
+                {cartCount === 0 ? (
+                  ""
+                ) : (
+                  <div className={styles.cartIndic}>{cartCount}</div>
+                )}
               </Link>
             </div>
           ) : (
