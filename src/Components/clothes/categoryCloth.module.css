@@ -5,6 +5,8 @@
 .cart {
   display: flex;
   justify-content: space-around;
+  width: 900px;
+  flex-wrap: wrap;
 }
 .log {
   position: absolute;
@@ -17,4 +19,8 @@
 }
 .logo {
   position: relative;
+}
+.WrapperCart{
+  display: flex;
+  justify-content: center;
 }

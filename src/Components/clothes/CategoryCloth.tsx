@@ -22,6 +22,7 @@ function CategoryCloth() {
   };
 
   return (
+    <div className={styles.WrapperCart}>
     <div className={styles.cart}>
       {cloth.map((item) => {
         return (
@@ -45,6 +46,7 @@ function CategoryCloth() {
           </div>
         );
       })}
+    </div>
     </div>
   );
 }
