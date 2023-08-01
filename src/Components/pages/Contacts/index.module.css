@@ -1,0 +1,32 @@
+.route {
+    display: flex;
+    flex-direction: column;
+    margin-top: 32px;
+}
+.contact {
+    font-size: 28px;
+    color: #17696A;
+    margin-bottom: 10px;
+    height: 42px;
+    
+}
+.outlet {
+    font-size: 28px;
+    color: #9A9CA5;
+    margin-bottom: 10px;
+    height: 42px;
+}
+.faq {
+    font-size: 28px;
+    color: #9A9CA5;
+    height: 42px;
+}
+.faq h3 {
+    margin: 0;
+}
+.outlet h3 {
+    margin: 0;
+}
+.contact h3 {
+    margin: 0;
+}

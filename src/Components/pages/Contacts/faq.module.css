@@ -1,0 +1,57 @@
+.rod {
+    display: flex;
+    justify-content: center;
+}
+.block {
+    display: flex;
+    width: 810px;
+    justify-content: space-between;
+    font-size: 20px;
+}
+.Adipiscing {
+    width: 770px;
+    color: #787A80;
+}
+.line {
+    border: 1px solid #E5E8ED;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.content {
+    
+    position: relative;
+    top: -140px
+}
+.link {
+    display: flex;
+    flex-direction: column;
+    margin-top: 32px;
+   
+}
+.contact {
+    font-size: 28px;
+    color: #9A9CA5;
+    margin-bottom: 10px;
+    height: 42px;
+    
+}
+.outlet {
+    font-size: 28px;
+    color: #9A9CA5;
+    margin-bottom: 10px;
+    height: 42px;
+}
+.faq {
+    font-size: 28px;
+    color: #17696A;
+    height: 42px;
+}
+.faq h3 {
+    margin: 0;
+}
+.outlet h3 {
+    margin: 0;
+}
+.contact h3 {
+    margin: 0;
+}

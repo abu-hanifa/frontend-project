@@ -1,0 +1,57 @@
+.rod {
+    display: flex;
+    justify-content: center;
+}
+.icon {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+.icon p {
+    font-size: 16px;
+   
+    margin-left: 12px;
+}
+.icon img {
+    width: 20px;
+    height: 20px;
+}
+.input {
+    width: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.input input {
+    width: 390px;
+    height: 52px;
+    margin-right: 30px;
+    border-radius: 4px;
+    
+}
+.input p {
+    margin-right: 30px;
+}
+.bigInput textarea {
+    width: 810px;
+    height: 164px; 
+    border-radius: 4px; 
+    padding: 13px;
+}
+.bigInput p {
+    margin-top: 24px;
+}
+.but {
+    width: 186px;
+    height: 52px;
+    border-radius: 4px;
+    color: white;
+    background-color: #17696A;
+    font-size: 16px;
+    margin-top: 48px;
+}
+.content {
+    
+    position: relative;
+    top: -155px
+}
