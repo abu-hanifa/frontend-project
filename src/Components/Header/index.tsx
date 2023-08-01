@@ -11,6 +11,7 @@ import Category from "../Category/Category";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../app/store";
 import { getUserFavorites } from "../../features/FavoriteSlice";
+import { getUser } from "../../features/userSlice";
 
 export default function Header() {
   const [theme, setTheme] = useState(true);
@@ -18,6 +19,7 @@ export default function Header() {
   const [popUp1, setPopUp1] = useState(false);
   const loading = useSelector((state: RootState) => state.category.loading);
   const token = useSelector((state: RootState) => state.application.token);
+  const user = useSelector((state: RootState) => state.user.user);
   const dispatch = useDispatch();
   const favoriteClothes = useSelector(
     (state: RootState) => state.favorite.clothes
@@ -26,6 +28,7 @@ export default function Header() {
 
   useEffect(() => {
     dispatch(getUserFavorites());
+    dispatch(getUser());
   }, []);
 
   function handleMan() {
@@ -43,20 +46,11 @@ export default function Header() {
     ? favoriteClothes.cloth.length
     : "";
   const cartCount = cart ? cart.length : "";
-
   return (
     <>
       <div className={styles.header}>
         <div className={styles.blackLine}>
           <div className={styles.navBar}>
-            <button
-              className={theme ? styles.themeButton : styles.themeButtonDark}
-              onClick={handleTheme}
-            >
-              <div id={styles.slider}>
-                <img src={theme ? sun : moon} alt="sun || moon" />
-              </div>
-            </button>
             <Link className={styles.link} to="#">
               Отслеживание заказа
             </Link>
@@ -67,6 +61,12 @@ export default function Header() {
           <div className={styles.profileBar}>
             <div className={styles.bar2}>
               <img src={Person} alt="person" />
+              {user.role && user.role === "admin" ? (
+                <Link to="/add-cloth">Добавить товар</Link>
+              ) : (
+                ""
+              )}
+              <span>/</span>
               {token ? (
                 <Link to="/profile">Профиль</Link>
               ) : (
@@ -116,7 +116,9 @@ export default function Header() {
               </Link>
               <Link to="/cart" className={styles.cartBar}>
                 <img src={cartICon} alt="heart" />
-                <div className={styles.cartIndic}>{cartCount}</div>
+                <div className={styles.cartIndic}>
+                  {cartCount === 0 ? "" : cartCount}
+                </div>
               </Link>
             </div>
           ) : (
