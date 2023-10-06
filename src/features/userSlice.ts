@@ -19,6 +19,8 @@ export const getUser = createAsyncThunk<
         Authorization: `Bearer ${thunkAPI.getState().application.token}`,
       },
     });
+    
+    
     const json = await res.json();
     if (json.error) {
       return thunkAPI.rejectWithValue(json.error);

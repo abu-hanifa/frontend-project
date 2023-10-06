@@ -130,7 +130,7 @@ const MyProfile = () => {
   const handleConfirmPasswordChange = (event) => {
     setValuePasswordConfirm(event.target.value)
   }
-  console.log(valuePasswordConfirm);
+  
 
   return (
     <div>
